@@ -6,11 +6,7 @@
   <link rel="stylesheet" href="pricing.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <meta charset="utf-8">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+
 </head>
 <body>
   
@@ -27,6 +23,8 @@
   <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
 </div>
 
+
+
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto my-5 text-center">
   <div class="container">
     <div class="card mb-4 shadow-sm">
@@ -36,6 +34,7 @@
         </div>
         
       </div>
+      <div class = "imagePreview">
       <div class="text-center">
         <h1 class="card-title pricing-card-title"></h1>
         <ul class="list-unstyled py-5 mt-3 mb-4 font-weight-normal" >
@@ -44,7 +43,11 @@
           <br>
           <li>사진의 색상과 밝기에 따라 분석의 결과는 다소 달라질 수 있습니다</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary font-weight-bold">Upload Your Image</button>
+        <div class = "uploadFile">
+        <input type="file" class = "btn btn-lg btn-block btn-primary font-weight-bold" value = "Upload your photo">
+        <!-- <button type="button" class="uploadFile_img btn btn-lg btn-block btn-primary font-weight-bold" >Upload Your Image</button> -->
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -73,9 +76,39 @@
 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ef53b49cbe11b0e"></script>
 
+<script>
+
+</script>
 </body>
 </html>
 
 
 
 
+<script>
+  $(".imgAdd").click(function () {
+    $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+  });
+  $(document).on("click", "i.del", function () {
+    $(this).parent().remove();
+  });
+  $(function () {
+    $(document).on("change", ".uploadFile", function () {
+      var uploadFile = $(this);
+      var files = !!this.files ? this.files : [];
+      if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+      if (/^image/.test(files[0].type)) { // only image file
+        var reader = new FileReader(); // instance of the FileReader
+        reader.readAsDataURL(files[0]); // read the local file
+
+        reader.onloadend = function () { // set image data as background of div
+          //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+          uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+        }
+      }
+
+    });
+  });
+  
+</script>

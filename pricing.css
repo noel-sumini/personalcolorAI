@@ -20,6 +20,9 @@ html {
   height : 600px;
 }
 
+body{
+  background-color: gray;
+}
 
 footer{
   width: 100%;
@@ -48,57 +51,41 @@ footer{
   text-align:right;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #eeeeee;
-}
-body
-{
-  background-color:#f5f5f5;
+#upload {
+  opacity: 0;
 }
 
-.imagePreview {
-  background:url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);
-  background-repeat:no-repeat;
-  display: inline-block;
+#upload-label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
 }
-.btn-primary
-{
-  display:block;
-  border-radius:0px;
-  box-shadow:0px 4px 6px 2px rgba(0,0,0,0.2);
-  margin-top:-5px;
+
+.image-area {
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  position: relative;
 }
-.imgUp
-{
-  margin-bottom:15px;
+
+.image-area::before {
+  content: 'Uploaded image result';
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  z-index: 1;
 }
-.del
-{
-  position:absolute;
-  top:0px;
-  right:15px;
-  width:30px;
-  height:30px;
-  text-align:center;
-  line-height:30px;
-  background-color:rgba(255,255,255,0.6);
-  cursor:pointer;
+
+.image-area img {
+  z-index: 2;
+  position: relative;
 }
-.imgAdd
-{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background-color:#4bd7ef;
-  color:#fff;
-  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.2);
-  text-align:center;
-  line-height:30px;
-  margin-top:0px;
-  cursor:pointer;
-  font-size:15px;
-}
+
 
 
 @import url(https://fonts.google.com/earlyaccess/nanumgothic.css);

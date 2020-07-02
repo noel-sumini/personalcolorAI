@@ -22,8 +22,8 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app = Flask(__name__,
             template_folder = "templates",
             static_folder = "static")
-app.config['ENV'] = 'development'
-app.config['DEBUG'] = True
+# app.config['ENV'] = 'development'
+# app.config['DEBUG'] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -84,26 +84,6 @@ def pcolor_analysis(imagePath):
     V = np.mean(skin_hsv[:,:,2])
 
     # ## 퍼스널컬러 분류
-    
-    # if a > b and L > 50 and S > 84:
-    #     result = "spring warm Light(봄/웜/라이트)"
-    # elif a > b and L > 50 and S < 84:
-    #     result = "spring warm Bright(봄/웜/브라이트)"
-    
-    # elif a > b and L < 50 and S < 84 :
-    #     result = "autumn warm Mute(가을/웜/뮤트)"
-    # elif a > b and L < 50 and S > 84 :
-    #     result = "autumn warm Deep(가을/웜/딥)"
-    
-    # elif a < b and L < 50 and V > 65.2 :
-    #     result = "summer cool Light (여름/쿨/라이트)"
-    # elif a < b and L < 50 and V < 65.2 :
-    #     result = "summer cool Mute (여름/쿨/뮤트)"   
-
-    # elif a < b and L > 50 and V < 65.2 :
-    #     result = "summer cool Mute (겨울/쿨/브라이트)"   
-    # elif a < b and L > 50 and V > 65.2 :
-    #     result = "winter cool Deep(겨울/쿨/딥)"
     
     return L, a, b, S, V
 
@@ -228,12 +208,49 @@ def result():
                 L, a, b, S, V = pcolor_analysis( file_path )
                 x = np.array([L, a, b, S, V]).reshape((1,5))
                 fin_result = rfc.predict(x)
+
+                if fin_result == "봄라이트":
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/spring_light.png'
+                    fin_result = '봄 웜 라이트'
+
+                elif fin_result == '봄브라이트':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/spring_bright.png'
+                    fin_result = '봄 웜 브라이트'
+
+                elif fin_result == '여름라이트':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/summer_light.png'
+                    fin_result = '여름 쿨 라이트'
+
+                elif fin_result == '여름뮤트':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/summer_mute.png'
+                    fin_result = '여름 쿨 뮤트'
+
+                elif fin_result == '가을뮤트':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/fall_mute.png'
+                    fin_result = '가을 웜 뮤트'
+
+                elif fin_result == '가을딥':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/fall_deep.png'
+                    fin_result = '가을 웜 딥'
+
+                elif fin_result == '겨울브라이트':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/winter_bright.png'
+                    fin_result = '겨울 쿨 브라이트'
+
+                elif fin_result == '겨울딥':
+                    src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/winter_deep.png'
+                    fin_result = '겨울 쿨 딥'
+                    
+
+
             except:
                 fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
-    return render_template('result.html', result = fin_result)
+    return render_template('result.html', 
+                            result = fin_result, 
+                            src = src)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port = '80')
     

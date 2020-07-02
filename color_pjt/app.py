@@ -22,8 +22,8 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app = Flask(__name__,
             template_folder = "templates",
             static_folder = "static")
-# app.config['ENV'] = 'development'
-# app.config['DEBUG'] = True
+app.config['ENV'] = 'development'
+app.config['DEBUG'] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -212,7 +212,7 @@ def result():
     if request.method == 'GET':
         return render_template('index.html', result = fin_result)
 
-    elif request.method == 'POST':
+    if request.method == 'POST':
         f = request.files['file']
         name = f.filename
         
@@ -221,7 +221,7 @@ def result():
             fin_result = 'error'
     
         else:
-            f.save('uploads/{0}'.format(secure_filename(name)))
+            f.save(f'uploads/{secure_filename(name)}')
             file_path = os.path.join('./uploads', name )
 
             try:
@@ -231,9 +231,9 @@ def result():
             except:
                 fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
-        return render_template('result.html', result = fin_result)
+    return render_template('result.html', result = fin_result)
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port = '80')
+    app.run(host='0.0.0.0')
     

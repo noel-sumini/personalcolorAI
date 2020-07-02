@@ -13,49 +13,51 @@
 </head>
 
 <body>
-  <div class="Header">
-    <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+<div class = "wrap">
   
-      <a href="/"><img class="logo" src="https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/LOGO_type3%20(1).png" width="134" height="50"></img></a>
+  <div class="d-flex flex-column flex-md-row align-items-center  p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <a class="my-0 mr-md-auto font-weight-normal" href="/"><img src = "https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/LOGO_type3%20(1).png" width="134" height="50" ></img></a>
       <!-- <div class="addthis_inline_share_toolbox_uog9"></div> -->
-    </div>
-  </div>
-  <div class="container py-5">
-  
-      <div class="row py-4">
-        <div class="col-lg-6 mx-auto">
-  
-          <!-- Upload image input-->
-  
-            <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
-              <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">
-            <!-- <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label> -->
-            <!-- <div class="input-group-append">
-                          <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted"></small></label>
-                      
-                      </div> -->
-            
-              <input type="submit" class="btn btn-light m-0 rounded-pill px-4" />
-            </form>
-  
-  
-          <!-- Uploaded image area-->
-          <p class="font-italic text-black text-center">파일 선택 후 제출 버튼을 눌러주세요 </p>
-          <p class="font-italic text-black text-center">AI가 당신을 위한 퍼스널컬러 분석을 시작합니다 </p>
-          
-          <div class="image-area mt-4"><img id="imageResult" src="#" alt=""
-              class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-  
-        </div>
-      </div>
   </div>
 
+  <div class="container py-5">
+
+    <div class="row py-4">
+        <div class="col-lg-6 mx-auto">
+
+            <!-- Upload image input-->
+            
+            <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                
+                <form method = "POST" enctype="multipart/form-data">
+                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" name = "file">
+                    <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                    <div class="input-group-append">
+                        <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                    </div>
+
+                    <input type="submit"/>
+                </form>
+                
+            </div>
+
+            <!-- Uploaded image area-->
+            <p class="font-italic text-black text-center">The image uploaded will be rendered inside the box below.</p>
+            <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+            <h1> {{ result }} </h1>
+        </div>
+    </div>
+  </div>
+  
+</div>
+
   <footer class= "border-top ">
-    <div class="footer_left">
+    <div class="row-1">
         <small class="d-block text-muted">&copy; AI Inventors</small>
         <small class="d-block text-muted">ai.inventers@gmail.com</small>
     </div>
-    <div class="footer_right">
+    <div class="row-3">
       <small class = "d-block text-muted">Copyright by AI Inventors</small>
       <small class = "d-block text-muted">since 2020</small>
 

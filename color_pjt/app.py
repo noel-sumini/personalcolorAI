@@ -22,8 +22,8 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app = Flask(__name__,
             template_folder = "templates",
             static_folder = "static")
-app.config['ENV'] = 'development'
-app.config['DEBUG'] = True
+# app.config['ENV'] = 'development'
+# app.config['DEBUG'] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 

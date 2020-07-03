@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> PersonalColorAI </title>
-  <link rel="stylesheet" href="pricing.css">
+  <link rel="stylesheet" href="../static/pricing.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+
 
 
 </head>
@@ -28,13 +28,7 @@
           <!-- Upload image input-->
   
             <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
-              <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">
-              <!-- <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4">파일 선택</label> -->
-            <!-- <div class="input-group-append">
-                          <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted"></small></label>
-                      
-                      </div> -->
-            
+              <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">         
               <input type="submit" class="btn btn-light m-0 rounded-pill px-4" />
             </form>
   
@@ -50,21 +44,21 @@
       </div>
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
-        <img src= "{{ color_result_src }}" class = "color_result_src">
+        <img src= "{{ color_result_src }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block">
         
         <br>
         <p id= "celeb_data"> {{ celeb_data }} </p>
         <p id= "celeb_data"> {{ celeb_name }} </p>
-        <img src= "{{ celeb_img }}" class = "celeb_img">
+        <img src= "{{ celeb_img }}" class = "celeb_img img-fluid rounded shadow-sm mx-auto d-block">
       </div>
   </div>
 
   <footer class= "border-top ">
-    <div class="row-1">
+    <div class="col-6">
         <small class="d-block text-muted">&copy; AI Inventors</small>
         <small class="d-block text-muted">ai.inventers@gmail.com</small>
     </div>
-    <div class="row-3">
+    <div class="col-6">
       <small class = "d-block text-muted">Copyright by AI Inventors</small>
       <small class = "d-block text-muted">since 2020</small>
     </div>

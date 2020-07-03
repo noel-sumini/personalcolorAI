@@ -254,9 +254,9 @@ def result():
                             celeb_name1 = celeb_name1,
                             celeb_name2 = celeb_name2,
                             celeb_name3 = celeb_name3,
-                            celeb_img1 = celeb_img1,
-                            celeb_img2 = celeb_img2,
-                            celeb_img3 = celeb_img3)
+                            celeb_img_1 = celeb_img_1,
+                            celeb_img_2 = celeb_img_2,
+                            celeb_img_3 = celeb_img_3)
 
 
 if __name__ == "__main__":

@@ -133,6 +133,7 @@ rfc.fit( np.array(value_data), np.array(result_list))
 def result():
     fin_result = ""
     color_result_src = "#"
+    celeb_name = ""
     celeb_data = ""
     celeb_img = ""
 

@@ -41,6 +41,22 @@
               class="img-fluid rounded shadow-sm mx-auto d-block"></div>
   
         </div>
+
+        <div class="container" id = "loader">
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+          <div class="dot dot-3"></div>
+        </div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+            </filter>
+          </defs>
+        </svg>
+        
       </div>
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
@@ -48,7 +64,7 @@
         
         <br>
         <p id= "celeb_data"> {{ celeb_data }} </p>
-        <p id= "celeb_data"> {{ celeb_name }} </p>
+        <p id= "celeb_name"> {{ celeb_name }} </p>
         <img src= "{{ celeb_img }}" class = "celeb_img img-fluid rounded shadow-sm mx-auto d-block">
       </div>
   </div>
@@ -70,7 +86,6 @@
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ef53b49cbe11b0e"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
 
   <script type= "text/javascript">
     

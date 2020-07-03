@@ -132,6 +132,7 @@ rfc.fit( np.array(value_data), np.array(result_list))
 @app.route('/', methods =['GET', 'POST'])
 def result():
     fin_result = ""
+    final_result = ""
     color_result_src = "#"
     celeb_name = ""
     celeb_data = ""
@@ -216,12 +217,12 @@ def result():
             fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
 
-            fin_result = '당신의 퍼스널 컬러는 ' + fin_result + ' 톤 입니다.'
+            final_result = '당신의 퍼스널 컬러는 {{ fin_result }} 톤 입니다.'
 
 
 
         except:
-            fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
+            final_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
         if os.path.isfile(file_path):
             os.remove(file_path)
@@ -229,7 +230,7 @@ def result():
    
 
     return render_template('index.html', 
-                            result = fin_result, 
+                            result = final_result, 
                             color_result_src = color_result_src,
                             celeb_data = celeb_data,
                             celeb_name = celeb_name,

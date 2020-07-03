@@ -134,7 +134,7 @@ def result():
     fin_result = ""
     final_result = ""
     color_result_src = "#"
-    celeb_name1, celeb_name2, celeb_name3 =  = ""
+    celeb_name1, celeb_name2, celeb_name3 =  ""
     celeb_data = ""
     celeb_img = ""
 

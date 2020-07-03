@@ -147,7 +147,12 @@ def result():
         intro1 = "파일 선택 후 제출 버튼을 눌러주세요"
         intro2 = "AI가 당신을 위한 퍼스널컬러 분석을 시작합니다"
 
-        return render_template('index.html', intro1 = intro1, intro2 = intro2)
+        return render_template('index.html', 
+                            intro1 = intro1, intro2 = intro2,
+                            celeb_img_1 = celeb_img_1,
+                            celeb_img_2 = celeb_img_2,
+                            celeb_img_3 = celeb_img_3)
+                            
 
     if request.method == 'POST':
         f = request.files['file']

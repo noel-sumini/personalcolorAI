@@ -37,11 +37,11 @@ def pcolor_analysis(imagePath):
     image = cv2.imread(imagePath)
 
     faces = detector(image)
-    face = faces[0]
-    ## 얼굴 이미지 추출
     
-    x1, y1, x2, y2 = face.left(), face.top(), face.right(), face.bottom()
-    face_img = np.array(image[y1:y2, x1:x2, :])
+    ## 얼굴 이미지 추출
+    for face in faces:
+        x1, y1, x2, y2 = face.left(), face.top(), face.right(), face.bottom()
+        face_img = np.array(image[y1:y2, x1:x2, :])
 
     ## 눈 이미지 추출
     eye = eye_cascade.detectMultiScale(face_img, 1.01, 10)

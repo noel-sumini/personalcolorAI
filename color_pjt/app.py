@@ -169,65 +169,65 @@ def result():
                 color_result_src = color_result_src_default_url + 'spring_light.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '혜리 나연 강호동'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'spring_light/1.png'
-                celeb_img_2 = celeb_img_default_url + 'spring_light/2.png'
-                celeb_img_3 = celeb_img_default_url + 'spring_light/3.png'
+                celeb_img_1 = celeb_img_default_url + 'spring_light/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'spring_light/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'spring_light/3.jpg'
                 
             elif fin_result == '봄브라이트':
                 color_result_src = color_result_src_default_url + 'spring_bright.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '조이 아이유 송혜교'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'spring_bright/1.png'
-                celeb_img_2 = celeb_img_default_url + 'spring_bright/2.png'
-                celeb_img_3 = celeb_img_default_url + 'spring_bright/3.png'
+                celeb_img_1 = celeb_img_default_url + 'spring_bright/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'spring_bright/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'spring_bright/3.jpg'
 
             elif fin_result == '여름라이트':
                 color_result_src = color_result_src_default_url + 'summer_light.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '설현 차은우 화사'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'summer_light/1.png'
-                celeb_img_2 = celeb_img_default_url + 'summer_light/2.png'
-                celeb_img_3 = celeb_img_default_url + 'summer_light/3.png'
+                celeb_img_1 = celeb_img_default_url + 'summer_light/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'summer_light/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'summer_light/3.jpg'
 
             elif fin_result == '여름뮤트':
                 color_result_src = color_result_src_default_url + 'summer_mute.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '육성재 유재석 EXO세훈'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'summer_mute/1.png'
-                celeb_img_2 = celeb_img_default_url + 'summer_mute/2.png'
-                celeb_img_3 = celeb_img_default_url + 'summer_mute/3.png'
+                celeb_img_1 = celeb_img_default_url + 'summer_mute/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'summer_mute/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'summer_mute/3.jpg'
 
             elif fin_result == '가을뮤트':
                 color_result_src = color_result_src_default_url + 'fall_mute.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '웬디 모모 박서준'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'fall_mute/1.png'
-                celeb_img_2 = celeb_img_default_url + 'fall_mute/2.png'
-                celeb_img_3 = celeb_img_default_url + 'fall_mute/3.png'
+                celeb_img_1 = celeb_img_default_url + 'fall_mute/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'fall_mute/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'fall_mute/3.jpg'
 
             elif fin_result == '가을딥':
                 color_result_src = color_result_src_default_url + 'fall_deep.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '케이 세정 전현무'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'fall_deep/1.png'
-                celeb_img_2 = celeb_img_default_url + 'fall_deep/2.png'
-                celeb_img_3 = celeb_img_default_url + 'fall_deep/3.png'
+                celeb_img_1 = celeb_img_default_url + 'fall_deep/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'fall_deep/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'fall_deep/3.jpg'
 
             elif fin_result == '겨울브라이트':
                 color_result_src = color_result_src_default_url + 'winter_bright.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '채영 양요섭 김옥빈'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'winter_bright/1.png'
-                celeb_img_2 = celeb_img_default_url + 'winter_bright/2.png'
-                celeb_img_3 = celeb_img_default_url + 'winter_bright/3.png'
+                celeb_img_1 = celeb_img_default_url + 'winter_bright/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'winter_bright/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'winter_bright/3.jpg'
 
             elif fin_result == '겨울딥':
                 color_result_src = color_result_src_default_url + 'winter_deep.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '문근영 AOA찬미 EXO디오'.split(" ")
-                celeb_img_1 = celeb_img_default_url + 'winter_deep/1.png'
-                celeb_img_2 = celeb_img_default_url + 'winter_deep/2.png'
-                celeb_img_3 = celeb_img_default_url + 'winter_deep/3.png'
+                celeb_img_1 = celeb_img_default_url + 'winter_deep/1.jpg'
+                celeb_img_2 = celeb_img_default_url + 'winter_deep/2.jpg'
+                celeb_img_3 = celeb_img_default_url + 'winter_deep/3.jpg'
 
             # fin_result = fin_result.replace("봄", "봄 웜 ")
             # fin_result = fin_result.replace("여름", "여름 쿨 ")

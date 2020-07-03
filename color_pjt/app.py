@@ -105,9 +105,9 @@ for idx, filePath in enumerate(file_paths):
     
     for imagePath in train_imagePaths:
         print(imagePath)
-        
+
         try :
-            _, L, a, b, S, V = pcolor_analysis(imagePath)
+            L, a, b, S, V = pcolor_analysis(imagePath)
         except :
             os.remove(imagePath)
 

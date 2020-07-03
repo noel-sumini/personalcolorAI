@@ -211,18 +211,18 @@ def result():
                 celeb_name = '문근영 찬미 EXO디오'
                 celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/winter_deep.png'
 
-            fin_result = fin_result.replace("봄", "봄 웜 ")
-            fin_result = fin_result.replace("여름", "여름 쿨 ")
-            fin_result = fin_result.replace("가을", "가을 웜 ")
-            fin_result = fin_result.replace("겨울", "겨울 쿨 ")
+            # fin_result = fin_result.replace("봄", "봄 웜 ")
+            # fin_result = fin_result.replace("여름", "여름 쿨 ")
+            # fin_result = fin_result.replace("가을", "가을 웜 ")
+            # fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
 
-            final_result = '당신의 퍼스널 컬러는 {{ fin_result }} 톤 입니다.'
+            fin_result = '당신의 퍼스널 컬러는 {{ fin_result }} 톤 입니다.'
 
 
 
         except:
-            final_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
+            fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
         if os.path.isfile(file_path):
             os.remove(file_path)
@@ -230,7 +230,7 @@ def result():
    
 
     return render_template('index.html', 
-                            result = final_result, 
+                            result = fin_result, 
                             color_result_src = color_result_src,
                             celeb_data = celeb_data,
                             celeb_name = celeb_name,

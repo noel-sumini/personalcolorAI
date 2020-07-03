@@ -211,10 +211,10 @@ def result():
                 celeb_name = '문근영 찬미 EXO디오'
                 celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/winter_deep.png'
 
-            # fin_result = fin_result.replace("봄", "봄 웜 ")
-            # fin_result = fin_result.replace("여름", "여름 쿨 ")
-            # fin_result = fin_result.replace("가을", "가을 웜 ")
-            # fin_result = fin_result.replace("겨울", "겨울 쿨 ")
+            fin_result = fin_result.replace("봄", "봄 웜 ")
+            fin_result = fin_result.replace("여름", "여름 쿨 ")
+            fin_result = fin_result.replace("가을", "가을 웜 ")
+            fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
 
             fin_result = f'당신의 퍼스널 컬러는 { fin_result } 톤 입니다.'

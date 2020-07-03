@@ -65,26 +65,28 @@
         <img src= "{{ color_result_src }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block">
         
         <br>
-        <p id= "celeb_data" class = "font-weight-bold"> {{ celeb_data }} </p>
+        <p id= "celeb_data"> <strong> {{ celeb_data }} </strong> </p>
         
 
         <div class = "container" id = "celeb_name"> 
+          <div class = "row">
           <div class="col-3"> {{ celeb_name1 }} </div>
           <div class="col-1"></div>
           <div class="col-4"> {{ celeb_name2 }} </div>
           <div class="col-1"></div>
           <div class="col-3"> {{ celeb_name3 }} </div>
+          </div>
         </div>
           
         
-        <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm mx-auto d-block">
-        <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm mx-auto d-block">
-        <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm mx-auto d-block">
+        <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block">
+        <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block">
+        <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm d-block">
       
       </div>
   </div>
 
-  <footer class= "border-top ">
+  <footer class= "container border-top">
     <div class="col-6">
         <small class="d-block text-muted">&copy; AI Inventors</small>
         <small class="d-block text-muted">ai.inventers@gmail.com</small>

@@ -37,7 +37,7 @@ def pcolor_analysis(imagePath):
     image = cv2.imread(imagePath)
 
     faces = detector(image)
-    
+
     ## 얼굴 이미지 추출
     for face in faces:
         x1, y1, x2, y2 = face.left(), face.top(), face.right(), face.bottom()
@@ -105,8 +105,11 @@ for idx, filePath in enumerate(file_paths):
     
     for imagePath in train_imagePaths:
         print(imagePath)
-
-        L, a, b, S, V = pcolor_analysis(imagePath)
+        
+        try :
+            _, L, a, b, S, V = pcolor_analysis(imagePath)
+        except :
+            os.remove(imagePath)
 
         temp = [L, a, b, S, V]
         value_data.append(temp)  

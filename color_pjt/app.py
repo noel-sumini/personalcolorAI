@@ -150,11 +150,13 @@ def result():
 
         f.save(f'uploads/{secure_filename(name)}')
         file_path = os.path.join('./uploads', name )
+        print(file_path)
 
         try:
             L, a, b, S, V = pcolor_analysis( file_path )
             x = np.array([L, a, b, S, V]).reshape((1,5))
             fin_result = rfc.predict(x)
+            print(fin_result)
 
             if fin_result == "봄라이트":
                 color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/spring_light.png'

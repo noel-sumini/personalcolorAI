@@ -42,6 +42,8 @@
   
         </div>
 
+        <!-- loader 기능 -->
+<!-- 
         <div class="container" id = "loader">
           <div class="dot dot-1"></div>
           <div class="dot dot-2"></div>
@@ -55,8 +57,8 @@
               <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
             </filter>
           </defs>
-        </svg>
-        
+        </svg> -->
+
       </div>
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
@@ -66,6 +68,14 @@
         <p id= "celeb_data"> {{ celeb_data }} </p>
         <p id= "celeb_name"> {{ celeb_name }} </p>
         <img src= "{{ celeb_img }}" class = "celeb_img img-fluid rounded shadow-sm mx-auto d-block">
+
+        <div class = "container" id = "celeb_name"> 
+          <div class="col-3"> {{ celeb_name1 }} </div>
+          <div class="col-1"></div>
+          <div class="col-4"> {{ celeb_name2 }} </div>
+          <div class="col-1"></div>
+          <div class="col-3"> {{ celeb_name3 }} </div>
+        </div>
       </div>
   </div>
 

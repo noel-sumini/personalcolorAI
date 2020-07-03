@@ -139,6 +139,9 @@ def result():
     celeb_name3 =  ""
     celeb_data = ""
     celeb_img_default_url = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/'
+    celeb_img_1 = "#"
+    celeb_img_2 = "#"
+    celeb_img_3 = "#"
 
     if request.method == 'GET':
         intro1 = "파일 선택 후 제출 버튼을 눌러주세요"

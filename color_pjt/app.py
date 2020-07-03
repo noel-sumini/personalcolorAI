@@ -146,6 +146,10 @@ def result():
     if request.method == 'POST':
         f = request.files['file']
         name = f.filename
+
+        result_dict = {''
+
+        }
         
 
         f.save(f'uploads/{secure_filename(name)}')
@@ -182,7 +186,7 @@ def result():
                 celeb_name = '육성재 유재석 EXO세훈'
                 celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/summer_mute.png'
 
-            elif fin_result == '가 뮤트':
+            elif fin_result == '가을뮤트':
                 color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/fall_mute.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '웬디 모모 박서준'
@@ -206,13 +210,13 @@ def result():
                 celeb_name = '문근영 찬미 EXO디오'
                 celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/winter_deep.png'
 
-            fin_result.replace("봄", "봄 웜 ")
-            fin_result.replace("여름", "여름 쿨 ")
-            fin_result.replace("가을", "가을 웜 ")
-            fin_result.replace("겨울", "겨울 쿨 ")
+            fin_result = fin_result.replace("봄", "봄 웜 ")
+            fin_result = fin_result.replace("여름", "여름 쿨 ")
+            fin_result = fin_result.replace("가을", "가을 웜 ")
+            fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
 
-            fin_result = f'당신의 퍼스널 컬러는 {fin_result} 톤 입니다.'
+            fin_result = '당신의 퍼스널 컬러는 ' + fin_result + ' 톤 입니다.'
 
 
 

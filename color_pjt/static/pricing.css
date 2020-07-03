@@ -79,6 +79,10 @@ body{
 #result#result_data{
   font-size: 2rem;
 }
+.ad-banner{
+  width : 320px;
+  margin: 0 auto;
+}
 
 footer{
   width: 100%;

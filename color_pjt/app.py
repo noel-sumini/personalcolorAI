@@ -106,7 +106,7 @@ for idx, filePath in enumerate(file_paths):
     for imagePath in train_imagePaths:
         print(imagePath)
 
-            _, L, a, b, S, V = pcolor_analysis(imagePath)
+        _, L, a, b, S, V = pcolor_analysis(imagePath)
 
         temp = [L, a, b, S, V]
         value_data.append(temp)  

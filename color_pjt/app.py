@@ -232,7 +232,9 @@ def result():
                             result = fin_result, 
                             color_result_src = color_result_src,
                             celeb_data = celeb_data,
-                            celeb_name = celeb_name,
+                            celeb_name1 = celeb_name1,
+                            celeb_name2 = celeb_name2,
+                            celeb_name3 = celeb_name3,
                             celeb_img = celeb_img)
 
 

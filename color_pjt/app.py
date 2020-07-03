@@ -152,7 +152,7 @@ def result():
                             celeb_img_1 = celeb_img_1,
                             celeb_img_2 = celeb_img_2,
                             celeb_img_3 = celeb_img_3)
-                            
+
 
     if request.method == 'POST':
         f = request.files['file']

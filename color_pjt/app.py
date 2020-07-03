@@ -167,49 +167,49 @@ def result():
                 color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/spring_light.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '혜리 나연 강호동'
-                celeb_img = './celeb_image/spring_light.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/spring_light.png'
                 
             elif fin_result == '봄브라이트':
-                color_result_src = './color_palate/spring_bright.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/spring_bright.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '조이 아이유 송혜교'
-                celeb_img = './celeb_image/spring_bright.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/spring_bright.png'
 
             elif fin_result == '여름라이트':
-                color_result_src = './color_palate/summer_light.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/summer_light.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '설현 차은우 화사'
-                celeb_img = './celeb_image/summer_light.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/summer_light.png'
 
             elif fin_result == '여름뮤트':
-                color_result_src = './color_palate/summer_mute.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/summer_mute.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '육성재 유재석 EXO세훈'
-                celeb_img = './celeb_image/summer_mute.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/summer_mute.png'
 
             elif fin_result == '가을뮤트':
-                color_result_src = './color_palate/fall_mute.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/fall_mute.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '웬디 모모 박서준'
-                celeb_img = './celeb_image/fall_mute.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/fall_mute.png'
 
             elif fin_result == '가을딥':
-                color_result_src = './color_palate/fall_deep.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/fall_deep.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '케이 세정 전현무'
-                celeb_img = './celeb_image/fall_deep.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/fall_deep.png'
 
             elif fin_result == '겨울브라이트':
-                color_result_src = './color_palate/winter_bright.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/winter_bright.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '채영 양요섭 김옥빈'
-                celeb_img = './celeb_image/winter_bright.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/winter_bright.png'
 
             elif fin_result == '겨울딥':
-                color_result_src = './color_palate/winter_deep.png'
+                color_result_src = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/winter_deep.png'
                 celeb_data = f'당신과 같은 {fin_result} 연예인은?'
                 celeb_name = '문근영 AOA찬미 EXO디오'
-                celeb_img = './celeb_image/winter_deep.png'
+                celeb_img = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/winter_deep.png'
 
             # fin_result = fin_result.replace("봄", "봄 웜 ")
             # fin_result = fin_result.replace("여름", "여름 쿨 ")

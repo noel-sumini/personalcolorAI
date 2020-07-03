@@ -66,8 +66,7 @@
         
         <br>
         <p id= "celeb_data"> {{ celeb_data }} </p>
-        <p id= "celeb_name"> {{ celeb_name }} </p>
-        <img src= "{{ celeb_img }}" class = "celeb_img img-fluid rounded shadow-sm mx-auto d-block">
+        
 
         <div class = "container" id = "celeb_name"> 
           <div class="col-3"> {{ celeb_name1 }} </div>
@@ -75,6 +74,13 @@
           <div class="col-4"> {{ celeb_name2 }} </div>
           <div class="col-1"></div>
           <div class="col-3"> {{ celeb_name3 }} </div>
+        </div>
+        <div class = "container" id = "celeb_img"> 
+          <img src="{{ celeb_img1 }}" class = "col-3 img-fluid rounded shadow-sm mx-auto d-block">
+          <div class="col-1"></div>
+          <img src="{{ celeb_img2 }}" class = "col-3 img-fluid rounded shadow-sm mx-auto d-block">
+          <div class="col-1"></div>
+          <img src="{{ celeb_img3 }}" class = "col-3 img-fluid rounded shadow-sm mx-auto d-block">
         </div>
       </div>
   </div>

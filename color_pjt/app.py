@@ -289,12 +289,12 @@ def result():
             # fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
 
-            fin_result = f'당신의 퍼스널 컬러는 { fin_result } 톤 입니다.'
+            # fin_result = f'당신의 퍼스널 컬러는 { fin_result } 톤 입니다.'
 
 
 
         except:
-            fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
+            fin_result = "얼굴/눈 인식에 실패하였습니다. \n 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
         if os.path.isfile(file_path):
             os.remove(file_path)

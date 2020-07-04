@@ -11,15 +11,6 @@ html {
   width: 960px;
 }
 
-.pricing-header {
-  width: 700px;
-}
-
-.card-deck .card {
-  min-width: 1000px;
-  height : 600px;
-}
-
 body{
   background-color: gray;
 }
@@ -29,10 +20,6 @@ body{
   overflow:hidden;
 }
 
-.wrap{
-  height: 93%
-
-}
 
 #upload {
   opacity: 0;
@@ -46,7 +33,6 @@ body{
 }
 
 .image-area {
-  border: 2px dashed rgba(255, 255, 255, 0.7);
   padding: 1rem;
   position: relative;
 }
@@ -56,7 +42,6 @@ body{
 }
 
 .image-area::before {
-  content: 'Uploaded image result';
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -106,6 +91,7 @@ footer{
 
 
 .dot { 
+  z-index: 3;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -164,9 +150,9 @@ footer{
 }
 
 @keyframes index {
-  0%, 100% {z-index: 6}
-  33.3% {z-index: 5}
-  66.6% {z-index: 4}
+  0%, 100% {z-index: 7}
+  33.3% {z-index: 6}
+  66.6% {z-index: 5}
 }
 
 

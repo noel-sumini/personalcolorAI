@@ -39,21 +39,6 @@
           
       </div>
 
-      <div class="container" id = "loader">
-        <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-        <p class="loader_text"> AI Processing... </p>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
-          </filter>
-        </defs>
-      </svg>
-
       <br><br><br>
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
@@ -73,20 +58,20 @@
         <div class = "container" id = "celeb_name"> 
 
           <div class = "row">
-            <div class="col-3 text-center celeb_name_title mr-5"> {{ celeb_name1 }} </div>
-            <div class="col-3 text-center celeb_name_title mr-5" > {{ celeb_name2 }} </div>
-            <div class="col-3 text-center celeb_name_title"> {{ celeb_name3 }} </div>
+            <div class="col-4 text-center celeb_name_title "> {{ celeb_name1 }} </div>
+            <div class="col-4 text-center celeb_name_title " > {{ celeb_name2 }} </div>
+            <div class="col-4 text-center celeb_name_title"> {{ celeb_name3 }} </div>
           </div>
 
 
           <div class = "row">
-          <div class="col-3"> 
-            <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block mr-5">
+          <div class="col-4"> 
+            <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block ">
           </div>
-          <div class="col-3"> 
-            <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block mr-5">
+          <div class="col-4"> 
+            <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block ">
           </div>
-          <div class="col-3"> 
+          <div class="col-4"> 
             <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm d-block">
           </div>
           </div>

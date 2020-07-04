@@ -21,20 +21,22 @@
     </div>
   </div>
   <div class="container py-5">
-    <div class="container" id = "loader">
-      <div class="dot dot-1"></div>
-      <div class="dot dot-2"></div>
-      <div class="dot dot-3"></div>
-      <p class="loader_text"> AI Processing... </p>
+    <div id = "loader">
+      <div class="loader">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+        <p> AI Processing ...</p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+          </filter>
+        </defs>
+      </svg>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
-        </filter>
-      </defs>
-    </svg>
       <div class="row py-4">
         <div class="col-lg-6 mx-auto">
           <!-- Upload image input-->

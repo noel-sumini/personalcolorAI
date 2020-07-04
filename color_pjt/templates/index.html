@@ -25,7 +25,7 @@
       <div class="row py-4">
         <div class="col-lg-6 mx-auto">
           <!-- Upload image input-->
-            <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' ></form>
+            <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
               <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">
               <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4">파일 선택</label>         
               <input type="submit" class="btn btn-light m-0 rounded-pill px-4" id = "submit" onclick="loader()">
@@ -35,6 +35,16 @@
           <p class="font-italic text-black text-center"> {{ intro1 }} </p>
           <p class="font-italic text-black text-center"> {{ intro2 }} </p>
           
+
+
+          <div class="container" id = "loader">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+            <p class="loader_text"> AI Processing... </p>
+          </div>
+
+
           <div class="image-area mt-4"><img id="imageResult" src="#" alt=""
               class="img-fluid rounded shadow-sm mx-auto d-block"></div>
   
@@ -42,11 +52,7 @@
 
       </div>
 
-      <div class="container" id = "loader">
-        <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-      </div>
+
       
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>

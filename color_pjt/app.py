@@ -149,7 +149,7 @@ def result():
     celeb_img_3 = ""
 
     if request.method == 'GET':
-        intro1 = "상단 바를 눌러 파일 선택 후 제출 버튼을 눌러주세요"
+        intro1 = "파일 선택 후 제출 버튼을 눌러주세요"
         intro2 = "AI가 당신을 위한 퍼스널컬러 분석을 시작합니다"
 
         return render_template('index.html', 

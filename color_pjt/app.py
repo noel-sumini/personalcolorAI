@@ -134,6 +134,11 @@ def result():
     fin_result = ""
     final_result = ""
     color_result_src_default_url = "https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/"
+    color_result_src_1 =""
+    color_result_src_2 =""
+    color_result_src_3 =""
+    color_result_src_4 =""
+    color_result_src_5 =""
     celeb_name1 = "" 
     celeb_name2 = ""
     celeb_name3 =  ""
@@ -171,7 +176,11 @@ def result():
             
 
             if fin_result == "봄라이트":
-                color_result_src = color_result_src_default_url + 'spring_light.png'
+                color_result_src_1 = color_result_src_default_url + 'spring_light/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'spring_light/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'spring_light/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'spring_light/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'spring_light/5.jpg'
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '혜리 나연 강호동'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'spring_light/1.jpg'
@@ -179,7 +188,12 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'spring_light/3.jpg'
                 
             elif fin_result == '봄브라이트':
-                color_result_src = color_result_src_default_url + 'spring_bright.png'
+                color_result_src_1 = color_result_src_default_url + 'spring_bright/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'spring_bright/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'spring_bright/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'spring_bright/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'spring_bright/5.jpg'
+                
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '조이 아이유 송혜교'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'spring_bright/1.jpg'
@@ -187,7 +201,13 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'spring_bright/3.jpg'
 
             elif fin_result == '여름라이트':
-                color_result_src = color_result_src_default_url + 'summer_light.png'
+                color_result_src_1 = color_result_src_default_url + 'summer_light/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'summer_light/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'summer_light/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'summer_light/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'summer_light/5.jpg'
+
+                
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '설현 차은우 화사'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'summer_light/1.jpg'
@@ -195,7 +215,12 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'summer_light/3.jpg'
 
             elif fin_result == '여름뮤트':
-                color_result_src = color_result_src_default_url + 'summer_mute.png'
+                color_result_src_1 = color_result_src_default_url + 'summer_mute/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'summer_mute/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'summer_mute/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'summer_mute/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'summer_mute/5.jpg'
+
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '육성재 유재석 EXO세훈'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'summer_mute/1.jpg'
@@ -203,7 +228,12 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'summer_mute/3.jpg'
 
             elif fin_result == '가을뮤트':
-                color_result_src = color_result_src_default_url + 'fall_mute.png'
+                color_result_src_1 = color_result_src_default_url + 'fall_mute/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'fall_mute/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'fall_mute/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'fall_mute/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'fall_mute/5.jpg'
+
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '웬디 모모 박서준'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'fall_mute/1.jpg'
@@ -211,7 +241,12 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'fall_mute/3.jpg'
 
             elif fin_result == '가을딥':
-                color_result_src = color_result_src_default_url + 'fall_deep.png'
+                color_result_src_1 = color_result_src_default_url + 'fall_deep/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'fall_deep/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'fall_deep/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'fall_deep/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'fall_deep/5.jpg'
+                
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '케이 세정 전현무'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'fall_deep/1.jpg'
@@ -219,7 +254,12 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'fall_deep/3.jpg'
 
             elif fin_result == '겨울브라이트':
-                color_result_src = color_result_src_default_url + 'winter_bright.png'
+                color_result_src_1 = color_result_src_default_url + 'winter_bright/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'winter_bright/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'winter_bright/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'winter_bright/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'winter_bright/5.jpg'
+
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '채영 양요섭 김옥빈'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'winter_bright/1.jpg'
@@ -227,7 +267,13 @@ def result():
                 celeb_img_3 = celeb_img_default_url + 'winter_bright/3.jpg'
 
             elif fin_result == '겨울딥':
-                color_result_src = color_result_src_default_url + 'winter_deep.png'
+                color_result_src_1 = color_result_src_default_url + 'winter_deep/1.jpg'
+                color_result_src_2 = color_result_src_default_url + 'winter_deep/2.jpg'
+                color_result_src_3 = color_result_src_default_url + 'winter_deep/3.jpg'
+                color_result_src_4 = color_result_src_default_url + 'winter_deep/4.jpg'
+                color_result_src_5 = color_result_src_default_url + 'winter_deep/5.jpg'
+
+
                 celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '문근영 AOA찬미 EXO디오'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'winter_deep/1.jpg'
@@ -261,7 +307,12 @@ def result():
                             celeb_name3 = celeb_name3,
                             celeb_img_1 = celeb_img_1,
                             celeb_img_2 = celeb_img_2,
-                            celeb_img_3 = celeb_img_3)
+                            celeb_img_3 = celeb_img_3,
+                            color_result_src_1 = color_result_src_1,
+                            color_result_src_2 = color_result_src_2,
+                            color_result_src_3 = color_result_src_3,
+                            color_result_src_4 = color_result_src_4,
+                            color_result_src_5 = color_result_src_5)
 
 
 if __name__ == "__main__":

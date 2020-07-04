@@ -29,7 +29,7 @@
   
             <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
               <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">         
-              <input type="submit" class="btn btn-light m-0 rounded-pill px-4" />
+              <input type="submit" class="btn btn-light m-0 rounded-pill px-4" onclick="loader()"/>
             </form>
   
   
@@ -41,6 +41,9 @@
               class="img-fluid rounded shadow-sm mx-auto d-block"></div>
   
         </div>
+
+        <div id="loading"><img id="loading-image" src="#" alt="Loading..." /></div>
+
 
         <!-- loader 기능 -->
 <!-- 
@@ -62,14 +65,22 @@
       </div>
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
-        <img src= "{{ color_result_src }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block">
+        
+        <div class = "container">
+          <div class = "row">
+            <div class ="col-2"> <img src= "{{ color_result_src_1 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-2"> <img src= "{{ color_result_src_2 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-2"> <img src= "{{ color_result_src_3 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-2"> <img src= "{{ color_result_src_4 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-2"> <img src= "{{ color_result_src_5 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+          </div>
+        </div>
         
         <br>  
         <br>
         <br>
-        <p class= "celeb_data"> <strong> {{ celeb_data }} </strong> </p>
-        
 
+        <p class= "celeb_data"> <strong> {{ celeb_data }} </strong> </p>
         <div class = "container" id = "celeb_name"> 
 
           <div class = "row">
@@ -177,6 +188,18 @@
 
   </script>
   <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+
+  <script type="text/javascript">
+    function loader(){
+      document.getElementById('loading').setAttribute('src', '../static/loader.gif');
+
+      if ('#result_data' != None){
+        $('#loading').hide();  
+        } 
+    }
+    </script>
+    
 
 </body>
 </html>

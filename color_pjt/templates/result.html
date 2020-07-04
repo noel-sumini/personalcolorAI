@@ -27,16 +27,32 @@
   
           <!-- Upload image input-->
   
-            <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
-              <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">         
-              <input type="submit" class="btn btn-light m-0 rounded-pill px-4"/>
-            </form>
+          <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
+            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">
+            <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4">파일 선택</label>         
+            <input type="submit" class="btn btn-light m-0 rounded-pill px-4" id = "submit" onclick="loader()">
+          </form>
   
   
           <!-- Uploaded image area-->
           <p class="font-italic text-black text-center"> {{ intro1 }} </p>
           
       </div>
+
+      <div class="container" id = "loader">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+        <p class="loader_text"> AI Processing... </p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+          </filter>
+        </defs>
+      </svg>
 
       <br><br><br>
       <div id = "result">
@@ -48,7 +64,6 @@
             <div class ="col-3"> <img src= "{{ color_result_src_2 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
             <div class ="col-3"> <img src= "{{ color_result_src_3 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
             <div class ="col-3"> <img src= "{{ color_result_src_4 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
-            <!-- <div class ="col-2"> <img src= "{{ color_result_src_5 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div> -->
           </div>
         </div>
         
@@ -59,11 +74,8 @@
 
           <div class = "row">
             <div class="col-3 text-center celeb_name_title mr-5"> {{ celeb_name1 }} </div>
-            <!-- <div class="col-1"></div> -->
             <div class="col-3 text-center celeb_name_title mr-5" > {{ celeb_name2 }} </div>
-            <!-- <div class="col-1"></div> -->
             <div class="col-3 text-center celeb_name_title"> {{ celeb_name3 }} </div>
-            <!-- <div class="col-1"></div> -->
           </div>
 
 
@@ -71,15 +83,12 @@
           <div class="col-3"> 
             <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block mr-5">
           </div>
-          <!-- <div class="col-1"></div> -->
           <div class="col-3"> 
             <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block mr-5">
           </div>
-          <!-- <div class="col-1"></div> -->
           <div class="col-3"> 
             <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm d-block">
           </div>
-          <!-- <div class="col-1"></div> -->
           </div>
 
 

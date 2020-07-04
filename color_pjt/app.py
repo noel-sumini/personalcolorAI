@@ -15,6 +15,8 @@ from werkzeug.utils import secure_filename
 
 import requests
 from flask import Flask, render_template, request
+from flask.ext.cache import Cache
+
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -25,6 +27,8 @@ app = Flask(__name__,
 # app.config['ENV'] = 'development'
 # app.config['DEBUG'] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+cache = Cache(app,
+            config={'CACHE_TYPE': 'simple'})
 
 
 
@@ -318,5 +322,5 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port = '80')
+    app.run(host='0.0.0.0', port = '80', threaded=True)
     

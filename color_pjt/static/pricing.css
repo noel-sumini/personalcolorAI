@@ -75,7 +75,8 @@ body{
 #result#result_data{
   font-size: 2rem;
 }
-.ad-banner{
+
+.ad_fit{
   width : 320px;
   margin: 0 auto;
 }

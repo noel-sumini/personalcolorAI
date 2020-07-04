@@ -13,12 +13,6 @@
 </head>
 
 <body>
-  <div class="loader" id="loader">
-    <div class="dot dot-1"></div>
-    <div class="dot dot-2"></div>
-    <div class="dot dot-3"></div>
-  </div>
-
 
   <div class="Header">
     <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -35,27 +29,21 @@
           <!-- Upload image input-->
   
           <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
-            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">
-            <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4">파일 선택</label>         
-            <input type="submit" class="btn btn-light m-0 rounded-pill px-4" id = "submit" onclick="loader()">
-            <label id="submit-label" for="submit" class="btn btn-light m-0 rounded-pill px-4">제출</label>         
+            <input id = "upload" type="button" formaction="personalcolorai.ga"> 
+            <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4"> 재시도 </label>         
           </form>
   
   
           <!-- Uploaded image area-->
-          <p class="font-italic text-black text-center"> {{ intro1 }} </p>
-          
+          <p class="font-italic text-black text-center"> 다시 한번 분석을 원하시면 상단의 재시도 버튼을 눌러주세요 </p>
       </div>
 
-
-
       <br>
       <br>
       <br>
       <br>
       <br>
 
-   
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
 
@@ -127,27 +115,6 @@
   <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 
 
-  <script type="text/javascript"> 
-    function loader(){
-      var maskHeight = $(document).height();
-      var maskWidth = window.document.body.clientWidth;
-
-      var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
-
-      $('body').append(mask);
-      $('#mask').css({
-        'width' : maskWidth,
-        'height': maskHeight,
-        'opacity' : '0.3'
-      });
-
-      $('#mask').show();
-      
-
-      document.getElementById('loader').style.display="block";
-    }
-  
-  </script>
 
     
 

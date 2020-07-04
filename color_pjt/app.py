@@ -160,7 +160,7 @@ def result():
 
 
     if request.method == 'POST':
-        intro1 = "재 분석을 원하시면 다시 상단 바를 눌러 파일 선택 후 제출 버튼을 눌러주세요"
+        intro1 = "재 분석을 원하시면 다시 파일 선택 후 제출 버튼을 눌러주세요"
         
         f = request.files['file']
         name = f.filename

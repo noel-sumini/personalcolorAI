@@ -289,7 +289,7 @@ def result():
             # fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
 
-            # fin_result = f'당신의 퍼스널 컬러는 { fin_result } 톤 입니다.'
+            fin_result = f'당신의 퍼스널 컬러는 { fin_result } 톤 입니다.'
 
 
 

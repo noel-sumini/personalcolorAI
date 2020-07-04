@@ -29,7 +29,7 @@
   
             <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
               <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">         
-              <input type="submit" class="btn btn-light m-0 rounded-pill px-4" onclick="loader()"/>
+              <input type="submit" class="btn btn-light m-0 rounded-pill px-4"/>
             </form>
   
   
@@ -42,27 +42,8 @@
   
         </div>
 
-        <div id="loading"><img id="loading-image" src="#"/></div>
-
-
-        <!-- loader 기능 -->
-<!-- 
-        <div class="container" id = "loader">
-          <div class="dot dot-1"></div>
-          <div class="dot dot-2"></div>
-          <div class="dot dot-3"></div>
-        </div>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-          <defs>
-            <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
-            </filter>
-          </defs>
-        </svg> -->
-
       </div>
+      
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
 

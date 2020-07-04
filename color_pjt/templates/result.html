@@ -5,10 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> PersonalColorAI </title>
-  <link rel="stylesheet" href="pricing.css">
-  <link rel="stylesheet" href="result.css">
+  <link rel="stylesheet" href="../static/pricing.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../static/favicon-16x16.png">
 
 
 </head>
@@ -21,21 +20,114 @@
       <!-- <div class="addthis_inline_share_toolbox_uog9"></div> -->
     </div>
   </div>
-  <p id = "result" >당신의 퍼스널 컬러는 {{ result }} 입니다 </p>
+  <div class="container py-5">
+  
+      <div class="row py-4">
+        <div class="col-lg-6 mx-auto">
+  
+          <!-- Upload image input-->
+  
+            <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
+              <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">         
+              <input type="submit" class="btn btn-light m-0 rounded-pill px-4"/>
+            </form>
+  
+  
+          <!-- Uploaded image area-->
+          <p class="font-italic text-black text-center"> {{ intro1 }} </p>
+          
 
-  <img src= {{ src }} id = "result_color_palate" class = "d-flex flex-column flex-md-row">
 
-  <footer class= "border-top ">
-    <div class="footer_left">
-        <small class="d-block text-muted">&copy; AI Inventors</small>
-        <small class="d-block text-muted">ai.inventers@gmail.com</small>
+      </div>
+      <div id = "result">
+        <p id= "result_data"> <strong> {{ result }} </strong> </p>
+
+        <div class = "container">
+          <div class = "row">
+            <div class ="col-3"> <img src= "{{ color_result_src_1 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-3"> <img src= "{{ color_result_src_2 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-3"> <img src= "{{ color_result_src_3 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <div class ="col-3"> <img src= "{{ color_result_src_4 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div>
+            <!-- <div class ="col-2"> <img src= "{{ color_result_src_5 }}" class = "color_result_src img-fluid rounded shadow-sm mx-auto d-block"> </div> -->
+          </div>
+        </div>
+        
+        <br>  
+        <br>
+        <br>
+
+        <p class= "celeb_data"> <strong> {{ celeb_data }} </strong> </p>
+        <div class = "container" id = "celeb_name"> 
+
+          <div class = "row">
+            <div class="col-3 text-center celeb_name_title mr-5"> {{ celeb_name1 }} </div>
+            <!-- <div class="col-1"></div> -->
+            <div class="col-3 text-center celeb_name_title mr-5" > {{ celeb_name2 }} </div>
+            <!-- <div class="col-1"></div> -->
+            <div class="col-3 text-center celeb_name_title"> {{ celeb_name3 }} </div>
+            <!-- <div class="col-1"></div> -->
+          </div>
+
+
+          <div class = "row">
+          <div class="col-3"> 
+            <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block mr-5">
+          </div>
+          <!-- <div class="col-1"></div> -->
+          <div class="col-3"> 
+            <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block mr-5">
+          </div>
+          <!-- <div class="col-1"></div> -->
+          <div class="col-3"> 
+            <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm d-block">
+          </div>
+          <!-- <div class="col-1"></div> -->
+          </div>
+
+
+        </div>
+      </div>
+  </div>
+
+
+  <div class = "container ad_fit">
+    <div class = "row">
+      <div class = "col-4"></div>
+      <div class = "col-4">
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit    = "DAN-1jensub3nm82s" 
+        data-ad-width   = "320" 
+        data-ad-height  = "100"></ins> 
+      </div>
+      <div class = "col-4"></div>
     </div>
-    <div class="footer_right">
-      <small class = "d-block text-muted">Copyright by AI Inventors</small>
-      <small class = "d-block text-muted">since 2020</small>
-    </div>
+  </div>
+  
 
+
+
+  <footer class= "border-top">
+        <small class = "d-block text-muted">&copy; AI Inventors</small>
+        <small class = "d-block text-muted">ai.inventers@gmail.com</small>
+        <small class = "d-block text-muted">Copyright by AI Inventors</small>
+        <small class = "d-block text-muted">since 2020</small>
   </footer>
+  
+  
+
+ 
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ef53b49cbe11b0e"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+
+    
 
 </body>
 </html>
+
+
+

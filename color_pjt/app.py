@@ -160,6 +160,8 @@ def result():
 
 
     if request.method == 'POST':
+        intro1 = "재 분석을 원하시면 다시 상단 바를 눌러 파일 선택 후 제출 버튼을 눌러주세요"
+        
         f = request.files['file']
         name = f.filename
 
@@ -298,7 +300,8 @@ def result():
     
    
 
-    return render_template('index.html', 
+    return render_template('result.html', 
+                            intro1 = intro1,
                             result = fin_result, 
                             celeb_data = celeb_data,
                             celeb_name1 = celeb_name1,

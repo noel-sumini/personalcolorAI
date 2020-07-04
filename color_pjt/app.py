@@ -15,7 +15,6 @@ from werkzeug.utils import secure_filename
 
 import requests
 from flask import Flask, render_template, request
-from flask.ext.cache import Cache
 
 
 UPLOAD_FOLDER = './uploads'
@@ -27,8 +26,6 @@ app = Flask(__name__,
 # app.config['ENV'] = 'development'
 # app.config['DEBUG'] = True
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-cache = Cache(app,
-            config={'CACHE_TYPE': 'simple'})
 
 
 

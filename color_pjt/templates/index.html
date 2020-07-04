@@ -43,6 +43,14 @@
             <div class="dot dot-3"></div>
             <p class="loader_text"> AI Processing... </p>
           </div>
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+              </filter>
+            </defs>
+          </svg>
 
 
           <div class="image-area mt-4"><img id="imageResult" src="#" alt=""
@@ -54,14 +62,7 @@
 
 
       
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
-          </filter>
-        </defs>
-      </svg>
+
 <!--       
       <div id = "result">
         <p id= "result_data"> <strong> {{ result }} </strong> </p>
@@ -188,7 +189,7 @@
 
   <script type="text/javascript"> 
     function loader(){
-      document.getElementById('loader').style.display="block"
+      document.getElementById('loader').style.display="block";
     }
   
   </script>

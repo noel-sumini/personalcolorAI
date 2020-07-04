@@ -56,7 +56,6 @@ body{
 }
 
 .image-area::before {
-  content: 'Uploaded image result';
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -72,10 +71,7 @@ body{
   z-index: 2;
   position: relative;
 }
-/* .celeb_name_title{
-  background-color: skyblue;
-  font-size: 1.5rem;
-} */
+
 #result#result_data{
   font-size: 2rem;
 }

@@ -13,6 +13,25 @@
 </head>
 
 <body>
+  
+  <div id = "loader">
+    <div class="loader">
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+      <p> AI Processing ...</p>
+      
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+
   <div class="Header">
     <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   
@@ -121,6 +140,28 @@
 
   <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 
+
+  <script type="text/javascript"> 
+    function loader(){
+      var maskHeight = $(document).height();
+      var maskWidth = window.document.body.clientWidth;
+
+      var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
+
+      $('body').append(mask);
+      $('#mask').css({
+        'width' : maskWidth,
+        'height': maskHeight,
+        'opacity' : '0.3'
+      });
+
+      $('#mask').show();
+      
+
+      document.getElementById('loader').style.display="block";
+    }
+  
+  </script>
 
     
 

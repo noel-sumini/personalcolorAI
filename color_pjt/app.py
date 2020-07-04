@@ -117,7 +117,8 @@ for idx, filePath in enumerate(file_paths):
 
         label.append(filePath)
         _, season, detail = filePath.split('_')
-        result_list.append(season + detail)
+        result_temp = season + detail
+        result_list.append(result_temp)
 
 ## Scikit-Learn 모델 학습
 

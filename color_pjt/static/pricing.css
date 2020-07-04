@@ -164,9 +164,9 @@ footer{
 }
 
 @keyframes index {
-  0%, 100% {z-index: 3}
-  33.3% {z-index: 2}
-  66.6% {z-index: 1}
+  0%, 100% {z-index: 6}
+  33.3% {z-index: 5}
+  66.6% {z-index: 4}
 }
 
 

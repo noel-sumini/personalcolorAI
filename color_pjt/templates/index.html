@@ -13,11 +13,7 @@
 </head>
 
 <body>
-  <!-- <div class="loader" id = "loader">
-    <div class="dot dot-1"></div>
-    <div class="dot dot-2"></div>
-    <div class="dot dot-3"></div>
-  </div> -->
+
 
   <div class="Header">
     <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -129,6 +125,14 @@
 
       var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
       var loadingImg= '';
+      
+
+      <div class="loader" id = "loader">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+      </div>
+
       loadingImg = loadingImg + "<img src='../static/loader.gif' style='position: absolute; z-index: 10000; display: block; margin: 0px auto;'>";
       
 
@@ -143,8 +147,8 @@
 
       $('#mask').show();
 
-      $('body').prepend(loadingImg)
-      $('#loadingImg').show();
+      $('body').prepend(loader)
+      $('#loader').show();
       
 
       // document.getElementById('loader').style.display="block";

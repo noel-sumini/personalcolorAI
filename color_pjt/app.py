@@ -299,6 +299,9 @@ def result():
 
             result1 = '당신의 퍼스널 컬러는   '
             result2 =  '   톤 입니다.' 
+            fin_result = fin_result.replace("[","<")
+            fin_result = fin_result.replace("]",">")
+            fin_result = fin_result.replace("'","")
 
 
 

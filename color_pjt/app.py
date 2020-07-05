@@ -36,6 +36,12 @@ detector = dlib.get_frontal_face_detector()
 
 def pcolor_analysis(imagePath):
     image = cv2.imread(imagePath)
+    h, w, d = image.shape
+
+    if w > 400:
+        r = 400.0 / w
+        dim = (400, int(h * r))
+        image = cv2.resize(image,dim)
 
     faces = detector(image)
 
@@ -168,6 +174,7 @@ def result():
 
         f.save(f'uploads/{secure_filename(name)}')
         file_path = os.path.join('./uploads', name )
+        
         print(file_path)
 
         try:

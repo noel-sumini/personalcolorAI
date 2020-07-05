@@ -188,7 +188,7 @@ def result():
 
             
 
-            if fin_result == "봄라이트":
+            if fin_result == ['봄라이트']:
                 color_result_src_1 = color_result_src_default_url + 'spring_light/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'spring_light/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'spring_light/3.jpg'
@@ -200,7 +200,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'spring_light/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'spring_light/3.jpg'
                 
-            elif fin_result == '봄브라이트':
+            elif fin_result == ['봄브라이트']:
                 color_result_src_1 = color_result_src_default_url + 'spring_bright/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'spring_bright/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'spring_bright/3.jpg'
@@ -213,7 +213,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'spring_bright/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'spring_bright/3.jpg'
 
-            elif fin_result == '여름라이트':
+            elif fin_result == ['여름라이트']:
                 color_result_src_1 = color_result_src_default_url + 'summer_light/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'summer_light/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'summer_light/3.jpg'
@@ -227,7 +227,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'summer_light/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'summer_light/3.jpg'
 
-            elif fin_result == '여름뮤트':
+            elif fin_result == ['여름뮤트']:
                 color_result_src_1 = color_result_src_default_url + 'summer_mute/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'summer_mute/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'summer_mute/3.jpg'
@@ -240,7 +240,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'summer_mute/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'summer_mute/3.jpg'
 
-            elif fin_result == '가을뮤트':
+            elif fin_result == ['가을뮤트']:
                 color_result_src_1 = color_result_src_default_url + 'fall_mute/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'fall_mute/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'fall_mute/3.jpg'
@@ -253,7 +253,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'fall_mute/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'fall_mute/3.jpg'
 
-            elif fin_result == '가을딥':
+            elif fin_result == ['가을딥']:
                 color_result_src_1 = color_result_src_default_url + 'fall_deep/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'fall_deep/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'fall_deep/3.jpg'
@@ -266,7 +266,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'fall_deep/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'fall_deep/3.jpg'
 
-            elif fin_result == '겨울브라이트':
+            elif fin_result == ['겨울브라이트']:
                 color_result_src_1 = color_result_src_default_url + 'winter_bright/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'winter_bright/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'winter_bright/3.jpg'
@@ -279,7 +279,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'winter_bright/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'winter_bright/3.jpg'
 
-            elif fin_result == '겨울딥':
+            elif fin_result == ['겨울딥']:
                 color_result_src_1 = color_result_src_default_url + 'winter_deep/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'winter_deep/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'winter_deep/3.jpg'
@@ -300,6 +300,9 @@ def result():
 
             result1 = '당신의 퍼스널 컬러는   '
             result2 =  '   톤 입니다.' 
+            fin_result = fin_result.replace("'","")
+            fin_result = fin_result.replace("[","<")
+            fin_result = fin_result.replace("]",">")
 
 
 

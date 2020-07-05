@@ -13,11 +13,11 @@
 </head>
 
 <body>
-  <div class="loader" id = "loader">
+  <!-- <div class="loader" id = "loader">
     <div class="dot dot-1"></div>
     <div class="dot dot-2"></div>
     <div class="dot dot-3"></div>
-  </div>
+  </div> -->
 
   <div class="Header">
     <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -128,6 +128,8 @@
       var maskWidth = window.document.body.clientWidth;
 
       var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
+      var loadingImg += "<img src='../static/loader.gif' style='position: absolute; display: block; margin: 0px auto;'>";
+      
 
       $('body').append(mask);
       $('#mask').css({
@@ -136,13 +138,18 @@
         'opacity' : '0.3'
       });
 
+      
+
       $('#mask').show();
+
+      $('#loadingImg').append(loadingImg);
+      $('#loadingImg').show();
       
 
       // document.getElementById('loader').style.display="block";
-      window.onbeforeunload = function(){
-        $('#loader').show();
-      }
+      // window.onbeforeunload = function(){
+      //   $('#loader').show();
+      // }
     }
   
   </script>

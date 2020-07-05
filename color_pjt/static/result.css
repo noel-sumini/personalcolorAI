@@ -85,7 +85,7 @@ footer{
   transform: translate(-50%, -50%);
   margin: auto;
   filter: url('#goo');
-  z-index: 10;
+  z-index: 100000;
   animation: rotate-move 2s ease-in-out infinite;
 }
 

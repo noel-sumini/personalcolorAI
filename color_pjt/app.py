@@ -149,7 +149,8 @@ def result():
     celeb_name1 = "" 
     celeb_name2 = ""
     celeb_name3 =  ""
-    celeb_data = ""
+    celeb_data1 = ""
+    celeb_data2 = ""
     celeb_img_default_url = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/'
     celeb_img_1 = ""
     celeb_img_2 = ""
@@ -194,8 +195,8 @@ def result():
                 color_result_src_3 = color_result_src_default_url + 'spring_light/3.jpg'
                 color_result_src_4 = color_result_src_default_url + 'spring_light/4.jpg'
                 color_result_src_5 = color_result_src_default_url + 'spring_light/5.jpg'
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '혜리 나연 강호동'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '윤아 정소민 박보영'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'spring_light/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'spring_light/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'spring_light/3.jpg'
@@ -207,7 +208,7 @@ def result():
                 color_result_src_4 = color_result_src_default_url + 'spring_bright/4.jpg'
                 color_result_src_5 = color_result_src_default_url + 'spring_bright/5.jpg'
                 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
                 celeb_name1, celeb_name2, celeb_name3 = '조이 아이유 송혜교'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'spring_bright/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'spring_bright/2.jpg'
@@ -221,8 +222,8 @@ def result():
                 color_result_src_5 = color_result_src_default_url + 'summer_light/5.jpg'
 
                 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '설현 차은우 화사'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '아이린 정채연 다현'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'summer_light/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'summer_light/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'summer_light/3.jpg'
@@ -234,8 +235,8 @@ def result():
                 color_result_src_4 = color_result_src_default_url + 'summer_mute/4.jpg'
                 color_result_src_5 = color_result_src_default_url + 'summer_mute/5.jpg'
 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '육성재 유재석 EXO세훈'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '김태리 김연아 김고은'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'summer_mute/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'summer_mute/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'summer_mute/3.jpg'
@@ -247,8 +248,8 @@ def result():
                 color_result_src_4 = color_result_src_default_url + 'fall_mute/4.jpg'
                 color_result_src_5 = color_result_src_default_url + 'fall_mute/5.jpg'
 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '웬디 모모 박서준'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '제니 이효리 박서준'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'fall_mute/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'fall_mute/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'fall_mute/3.jpg'
@@ -260,8 +261,8 @@ def result():
                 color_result_src_4 = color_result_src_default_url + 'fall_deep/4.jpg'
                 color_result_src_5 = color_result_src_default_url + 'fall_deep/5.jpg'
                 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '케이 세정 전현무'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '케이 세정 쯔위'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'fall_deep/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'fall_deep/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'fall_deep/3.jpg'
@@ -273,8 +274,8 @@ def result():
                 color_result_src_4 = color_result_src_default_url + 'winter_bright/4.jpg'
                 color_result_src_5 = color_result_src_default_url + 'winter_bright/5.jpg'
 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '채영 양요섭 김옥빈'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '지수 채영 트와이스미나'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'winter_bright/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'winter_bright/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'winter_bright/3.jpg'
@@ -287,8 +288,8 @@ def result():
                 color_result_src_5 = color_result_src_default_url + 'winter_deep/5.jpg'
 
 
-                celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
-                celeb_name1, celeb_name2, celeb_name3 = '문근영 AOA찬미 EXO디오'.split(" ")
+                # celeb_data = f'당신과 같은 {fin_result} 톤 연예인은?'
+                celeb_name1, celeb_name2, celeb_name3 = '선미 권은비 찬미'.split(" ")
                 celeb_img_1 = celeb_img_default_url + 'winter_deep/1.jpg'
                 celeb_img_2 = celeb_img_default_url + 'winter_deep/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'winter_deep/3.jpg'
@@ -300,6 +301,8 @@ def result():
 
             result1 = '당신의 퍼스널 컬러는'
             result2 =  '톤 입니다.' 
+            celeb_data1 = '당신과 같은 '
+            celeb_data2 = '톤 연예인은? '
             fin_result = str(fin_result)
             fin_result = fin_result.replace("'","")
             fin_result = fin_result.replace("["," < ")
@@ -320,7 +323,8 @@ def result():
                             result = fin_result, 
                             result1 = result1,
                             result2 = result2,
-                            celeb_data = celeb_data,
+                            celeb_data1 = celeb_data1,
+                            celeb_data2 = celeb_data2,
                             celeb_name1 = celeb_name1,
                             celeb_name2 = celeb_name2,
                             celeb_name3 = celeb_name3,

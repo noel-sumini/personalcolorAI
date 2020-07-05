@@ -76,6 +76,14 @@ footer{
   position: fixed;
 }
 
+#footer_left{
+  width:45%;
+  position: absolute;
+}
+#footer_right{
+  width:45%;
+  position: absolute;
+}
 
 #loader {
   display:block;
@@ -158,5 +166,5 @@ footer{
 }
 
 
-@import url(https://fonts.google.com/earlyaccess/nanumgothic.css);
-html,body{font-family :nanumgothic !important}
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+html,body{font-family :'Jua', sans-serif}

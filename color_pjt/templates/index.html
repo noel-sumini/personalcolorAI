@@ -128,7 +128,8 @@
       var maskWidth = window.document.body.clientWidth;
 
       var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
-      var loadingImg += "<img src='../static/loader.gif' style='position: absolute; display: block; margin: 0px auto;'>";
+      var loadingImg= '';
+      loadingImg = loadingImg + "<img src='../static/loader.gif' style='position: absolute; display: block; margin: 0px auto;'>";
       
 
       $('body').append(mask);

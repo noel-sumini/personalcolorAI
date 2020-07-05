@@ -129,7 +129,7 @@
 
       var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
       var loadingImg= '';
-      loadingImg = loadingImg + "<img src='../static/loader.gif' style='position: absolute; z-index: 8000; display: block; margin: 0px auto;'>";
+      loadingImg = loadingImg + "<img src='../static/loader.gif' style='position: absolute; z-index: 10000; display: block; margin: 0px auto;'>";
       
 
       $('body').append(mask);
@@ -143,7 +143,7 @@
 
       $('#mask').show();
 
-      $('#loadingImg').append(loadingImg);
+      $('body').append(loadingImg)
       $('#loadingImg').show();
       
 

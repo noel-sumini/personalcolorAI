@@ -154,6 +154,8 @@ def result():
     celeb_img_1 = ""
     celeb_img_2 = ""
     celeb_img_3 = ""
+    result1 = ""
+    result2 = ""
 
     if request.method == 'GET':
         intro1 = "파일 선택 후 제출 버튼을 눌러주세요"
@@ -295,8 +297,8 @@ def result():
             # fin_result = fin_result.replace("가을", "가을 웜 ")
             # fin_result = fin_result.replace("겨울", "겨울 쿨 ")
 
-
-            fin_result = f'당신의 퍼스널 컬러는 { fin_result } 톤 입니다.'
+            result1 = '당신의 퍼스널 컬러는 '
+            result2 =  ' 톤 입니다.' 
 
 
 
@@ -311,6 +313,8 @@ def result():
     return render_template('result.html', 
                             intro1 = intro1,
                             result = fin_result, 
+                            result1 = result1,
+                            result2 = result2,
                             celeb_data = celeb_data,
                             celeb_name1 = celeb_name1,
                             celeb_name2 = celeb_name2,

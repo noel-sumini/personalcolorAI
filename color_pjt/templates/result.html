@@ -39,17 +39,13 @@
         <p class="font-italic text-danger text-center"> {{ intro1 }} </p>
         <!-- <p class="font-italic text-black text-center"> {{ intro2 }} </p> -->
       </div>
-
-      <br>
-      <br>
       
+      <br>
       <div class = "row mx-auto">
         <span class = "result_data_normal "> <strong> {{ result1 }} &nbsp</strong> </span>
         <span class = "result_data "><h4><strong>&nbsp {{ result }} &nbsp </strong> </h4> </span>
         <span class = "result_data_normal "> <strong> &nbsp{{ result2 }} </strong> </span>
       </div>
-
-      <br>
       <br>
       <div id = "result">
         <div class = "container">
@@ -64,11 +60,13 @@
         <br>
         <br>
 
-        <span class = "celeb_data_normal "> <strong> {{ celeb_data1 }} </strong> </span>
-        <span class = "result_data "><strong> {{ result }} </strong> </span>
-        <span class = "celeb_data_normal "> <strong> {{ celeb_data2 }} </strong> </span>
+        <div class = "row mx-auto">
+          <span class = "celeb_data_normal "> <strong> {{ celeb_data1 }} </strong> </span>
+          <span class = "result_data "><strong> {{ result }} </strong> </span>
+          <span class = "celeb_data_normal "> <strong> {{ celeb_data2 }} </strong> </span>
+        </div>
         <br>
-        <br>
+
         <div class = "container" id = "celeb_name"> 
 
           <div class = "row">
@@ -79,15 +77,15 @@
 
 
           <div class = "row">
-          <div class="col-4"> 
-            <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block ">
-          </div>
-          <div class="col-4"> 
-            <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block ">
-          </div>
-          <div class="col-4"> 
-            <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm d-block">
-          </div>
+            <div class="col-4"> 
+              <img id = celeb_img_1 src="{{ celeb_img_1 }}" class = "img-fluid rounded shadow-sm d-block ">
+            </div>
+            <div class="col-4"> 
+              <img id = celeb_img_2 src="{{ celeb_img_2 }}" class = "img-fluid rounded shadow-sm d-block ">
+            </div>
+            <div class="col-4"> 
+              <img id = celeb_img_3 src="{{ celeb_img_3 }}" class = "img-fluid rounded shadow-sm d-block">
+            </div>
           </div>
 
 

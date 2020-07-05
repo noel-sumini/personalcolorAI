@@ -305,8 +305,8 @@ def result():
             celeb_data2 = '톤 연예인은? '
             fin_result = str(fin_result)
             fin_result = fin_result.replace("'","")
-            fin_result = fin_result.replace("["," < ")
-            fin_result = fin_result.replace("]"," > ")
+            fin_result = fin_result.replace('[','"')
+            fin_result = fin_result.replace(']','"')
 
 
 

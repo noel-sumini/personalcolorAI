@@ -183,6 +183,7 @@ def result():
             L, a, b, S, V = pcolor_analysis( file_path )
             x = np.array([L, a, b, S, V]).reshape((1,5))
             fin_result = rfc.predict(x)
+            fin_result = str(fin_result)
             print(fin_result)
 
             
@@ -299,9 +300,6 @@ def result():
 
             result1 = '당신의 퍼스널 컬러는   '
             result2 =  '   톤 입니다.' 
-            fin_result = fin_result.replace("[","<")
-            fin_result = fin_result.replace("]",">")
-            fin_result = fin_result.replace("'","")
 
 
 

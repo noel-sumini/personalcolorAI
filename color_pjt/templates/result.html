@@ -28,14 +28,16 @@
   
           <!-- Upload image input-->
   
-          <form method="POST" action ="/" enctype="multipart/form-data" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
-            <input type="button" id = "upload">
-            <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4"> 재시도 </label>         
+          <form method="POST" enctype="multipart/form-data" name = "file" class = 'input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm' >
+            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0 " name="file">
+            <label id="upload-label" for="upload" class="btn btn-light m-0 rounded-pill px-4">파일 선택</label>         
+            <input type="submit" class="btn btn-light m-0 rounded-pill px-4" id = "submit" onclick="loader()">
+                   
           </form>
-  
-  
-          <!-- Uploaded image area-->
-          <p class="font-italic text-black text-center"> 다시 한번 분석을 원하시면 상단의 재시도 버튼을 눌러주세요 </p>
+
+        <!-- Uploaded image area-->
+        <p class="font-italic text-black text-center"> {{ intro1 }} </p>
+        <!-- <p class="font-italic text-black text-center"> {{ intro2 }} </p> -->
       </div>
 
       <br>

@@ -303,7 +303,7 @@ def result():
             fin_result = str(fin_result)
             fin_result = fin_result.replace("'","")
             fin_result = fin_result.replace("["," < ")
-            fin_result = fin_result.replace("["," < ")
+            fin_result = fin_result.replace("]"," > ")
 
 
 

@@ -157,6 +157,7 @@ def result():
     celeb_img_3 = ""
     result1 = ""
     result2 = ""
+    celeb_result=""
 
     if request.method == 'GET':
         intro1 = "파일 선택 후 제출 버튼을 눌러주세요"
@@ -307,11 +308,12 @@ def result():
             fin_result = fin_result.replace("'","")
             fin_result = fin_result.replace('[','"')
             fin_result = fin_result.replace(']','"')
+            celeb_result=fin_result
 
 
 
         except:
-            fin_result = "얼굴/눈 인식에 실패하였습니다. \n 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
+            fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
         if os.path.isfile(file_path):
             os.remove(file_path)

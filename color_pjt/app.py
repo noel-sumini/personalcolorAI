@@ -38,9 +38,9 @@ def pcolor_analysis(imagePath):
     image = cv2.imread(imagePath)
     h, w, d = image.shape
 
-    if w > 400:
-        r = 400.0 / w
-        dim = (400, int(h * r))
+    if w > 500:
+        r = 500.0 / w
+        dim = (500, int(h * r))
         image = cv2.resize(image,dim)
 
     faces = detector(image)
@@ -169,7 +169,7 @@ def result():
                             celeb_img_3 = celeb_img_3)
 
 
-    if request.method == 'POST':
+    elif request.method == 'POST':
         intro1 = "재 분석을 원하시면 다시 파일 선택 후 제출 버튼을 눌러주세요"
         
         f = request.files['file']

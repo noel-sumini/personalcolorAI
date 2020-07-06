@@ -38,9 +38,9 @@ def pcolor_analysis(imagePath):
     image = cv2.imread(imagePath)
     h, w, d = image.shape
 
-    if w > 500:
-        r = 500.0 / w
-        dim = (500, int(h * r))
+    if w > 400:
+        r = 400.0 / w
+        dim = (400, int(h * r))
         image = cv2.resize(image,dim)
 
     faces = detector(image)

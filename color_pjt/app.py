@@ -325,6 +325,7 @@ def result():
                             result = fin_result, 
                             result1 = result1,
                             result2 = result2,
+                            celeb_result = celeb_result,
                             celeb_data1 = celeb_data1,
                             celeb_data2 = celeb_data2,
                             celeb_name1 = celeb_name1,

@@ -308,7 +308,7 @@ def result():
             fin_result = fin_result.replace("'","")
             fin_result = fin_result.replace('[','"')
             fin_result = fin_result.replace(']','"')
-            celeb_result=fin_result
+            celeb_result = fin_result
 
 
 

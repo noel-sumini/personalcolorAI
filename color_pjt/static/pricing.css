@@ -21,6 +21,10 @@ body{
   overflow:hidden;
 }
 
+.addthis_inline_share_toolbox{
+  margin : 0 auto;
+  display:block;
+}
 
 #upload {
   opacity: 0;

@@ -16,14 +16,24 @@
 
   <div class="Header">
     <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  
-      <a href="/"><img class="logo center-block mx-auto" src="../static/LOGO_type4.png" height="50"></img></a>
+      <div class="container">
+        <div class = "row">
+          <div class = "col-6">
+            <a href="/"><img class="logo center-block mx-auto" src="../static/LOGO_type4.png" height="50"></img></a>
+          </div>
+          <div class = "col-6">
+            <div class="addthis_inline_share_toolbox mx-auto pull-right"></div>
+          </div>
+        </div>
+
+      </div>
+      
       <!-- <a href="/"><img class="logo center-block mx-auto" src="../static/LOGO_type5.png" height="50"></img></a> -->
     </div>
   </div>
   <div class="container py-2 mb-5">
   
-      <div class="row py-2">
+      <div class="row py-1">
         <div class="col-lg-6 mx-auto">
   
           <!-- Upload image input-->
@@ -43,7 +53,7 @@
       <br>
       <div class = "row mx-auto">
         <span class = "result_data_normal "><h5> {{ result1 }} </h5></span>
-        <span class = "result_data text-danger"><h4>&nbsp {{ result }} &nbsp </h4> </span>
+        <span class = "result_data text-primary"><h4>&nbsp {{ result }} &nbsp </h4> </span>
         <span class = "result_data_normal "> <h5> &nbsp{{ result2 }} </h5> </span>
       </div>
       <br>
@@ -96,7 +106,7 @@
 
   
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <div class="addthis_inline_share_toolbox mx-auto pull-right"></div>
+  
             
   <div class = "ad_fit">
     <ins class="kakao_ad_area" style="display:none;" 

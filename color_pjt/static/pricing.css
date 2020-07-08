@@ -29,6 +29,14 @@ body{
 #upload {
   opacity: 0;
 }
+.logo{
+  margin: 0 auto;
+}
+
+#addthis{
+  margin: 0 auto;
+  float: right;
+}
 
 #upload-label {
   position: absolute;

@@ -51,7 +51,10 @@
           <!-- Uploaded image area-->
           <p class="font-italic text-black text-center"> {{ intro1 }} </p>
           <p class="font-italic text-black text-center"> {{ intro2 }} </p>
-          
+
+          <p class = "d-block text-muted" id = "content"> 퍼스널 컬러란?</p>
+          <p class = "d-block text-muted" id = "content"> 본인과 가장 잘 어울리는 </p>
+          <p class = "d-block text-muted" id = "content"> '본인만의 고유한' 컬러를 의미합니다.</p>
 
 
 
@@ -107,6 +110,7 @@
         var reader = new FileReader();
 
         reader.onload = function (e) {
+          $('#content').hide()
           $('#imageResult')
             .attr('src', e.target.result);
         };

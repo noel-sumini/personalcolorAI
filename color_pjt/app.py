@@ -179,7 +179,7 @@ def result():
         f = request.files['file']
         name = f.filename
 
-        f.save(f'./uploads/{secure_filename(name)}')
+        f.save('./uploads/' + str(secure_filename(name)))
         file_path = os.path.join('./uploads', name )
         
         print(file_path)

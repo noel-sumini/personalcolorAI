@@ -137,8 +137,8 @@ print("AI분석중")
 print("=" * 20)
 
 rfc = RandomForestClassifier()
-value_data = np.array(value_data)
-result_list = np.array(result_list).reshape(-1,1)
+value_data = np.array(value_data).reshape([-1,1])
+result_list = np.array(result_list)
 rfc.fit(value_data, result_list)
 
 ## Flask 

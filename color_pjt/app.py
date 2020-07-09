@@ -155,6 +155,8 @@ def result():
     celeb_img_1 = ""
     celeb_img_2 = ""
     celeb_img_3 = ""
+    intro1=""
+    intro2=""
     result1 = ""
     result2 = ""
     celeb_result=""
@@ -176,7 +178,7 @@ def result():
         f = request.files['file']
         name = f.filename
 
-        f.save(f'uploads/{secure_filename(name)}')
+        f.save(f'./uploads/{secure_filename(name)}')
         file_path = os.path.join('./uploads', name )
         
         print(file_path)
@@ -318,27 +320,25 @@ def result():
         if os.path.isfile(file_path):
             os.remove(file_path)
     
-   
-
-    return render_template('result.html', 
-                            intro1 = intro1,
-                            result = fin_result, 
-                            result1 = result1,
-                            result2 = result2,
-                            celeb_result = celeb_result,
-                            celeb_data1 = celeb_data1,
-                            celeb_data2 = celeb_data2,
-                            celeb_name1 = celeb_name1,
-                            celeb_name2 = celeb_name2,
-                            celeb_name3 = celeb_name3,
-                            celeb_img_1 = celeb_img_1,
-                            celeb_img_2 = celeb_img_2,
-                            celeb_img_3 = celeb_img_3,
-                            color_result_src_1 = color_result_src_1,
-                            color_result_src_2 = color_result_src_2,
-                            color_result_src_3 = color_result_src_3,
-                            color_result_src_4 = color_result_src_4,
-                            color_result_src_5 = color_result_src_5)
+        return render_template('result.html', 
+                                intro1 = intro1,
+                                result = fin_result, 
+                                result1 = result1,
+                                result2 = result2,
+                                celeb_result = celeb_result,
+                                celeb_data1 = celeb_data1,
+                                celeb_data2 = celeb_data2,
+                                celeb_name1 = celeb_name1,
+                                celeb_name2 = celeb_name2,
+                                celeb_name3 = celeb_name3,
+                                celeb_img_1 = celeb_img_1,
+                                celeb_img_2 = celeb_img_2,
+                                celeb_img_3 = celeb_img_3,
+                                color_result_src_1 = color_result_src_1,
+                                color_result_src_2 = color_result_src_2,
+                                color_result_src_3 = color_result_src_3,
+                                color_result_src_4 = color_result_src_4,
+                                color_result_src_5 = color_result_src_5)
 
 
 if __name__ == "__main__":

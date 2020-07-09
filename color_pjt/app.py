@@ -138,7 +138,7 @@ print("=" * 20)
 
 rfc = RandomForestClassifier()
 value_data = np.array(value_data)
-result_list = np.array(result_list)
+result_list = np.array(result_list).reshape(-1,1)
 rfc.fit(value_data, result_list)
 
 ## Flask 

@@ -112,11 +112,6 @@ for idx, filePath in enumerate(file_paths):
     
     for imagePath in train_imagePaths:
         print(imagePath)
-        L = ""
-        a = ""
-        b = ""
-        S = ""
-        V = ""
 
         try :
             L, a, b, S, V = pcolor_analysis(imagePath)

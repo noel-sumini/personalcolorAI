@@ -318,8 +318,7 @@ def result():
         except:
             fin_result = "얼굴/눈 인식에 실패하였습니다. 얼굴/눈이 또렷히 보이는 사진을 다시 준비해주세요!"
         
-        if os.path.isfile(file_path):
-            os.remove(file_path)
+
     
         return render_template('result.html', 
                                 intro1 = intro1,
@@ -340,7 +339,9 @@ def result():
                                 color_result_src_3 = color_result_src_3,
                                 color_result_src_4 = color_result_src_4,
                                 color_result_src_5 = color_result_src_5)
-
+        
+        if os.path.isfile(file_path):
+            os.remove(file_path)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port = '80', threaded=True)

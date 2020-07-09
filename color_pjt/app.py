@@ -117,6 +117,7 @@ for idx, filePath in enumerate(file_paths):
         b = ""
         S = ""
         V = ""
+
         try :
             L, a, b, S, V = pcolor_analysis(imagePath)
         except :
@@ -136,7 +137,9 @@ print("AI분석중")
 print("=" * 20)
 
 rfc = RandomForestClassifier()
-rfc.fit( np.array(value_data), np.array(result_list))
+value_data = np.array(value_data)
+result_list = np.array(result_list)
+rfc.fit(value_data, result_list)
 
 ## Flask 
 

@@ -113,14 +113,14 @@ file_paths = os.listdir('./train_image')
 
 result_list = []
 value_data = []
-result_dict = { '봄웜라이트': 0,
-                '봄웜브라이트': 1,
-                '여름쿨라이트': 2,
-                '여름쿨뮤트': 3,
-                '가을웜딥': 5,
-                '가을웜뮤트': 4,
-                '겨울쿨브라이트': 6,
-                '겨울쿨딥': 7}
+result_dict = { '봄웜라이트': 0,
+                '봄웜브라이트': 1,
+                '여름쿨라이트': 2,
+                '여름쿨뮤트': 3,
+                '가을웜딥': 5,
+                '가을웜딥': 4,
+                '겨울쿨브라이트': 6,
+                '겨울쿨딥': 7}
 
 for idx, filePath in enumerate(file_paths):
     train_imagePaths = list(paths.list_images(os.path.join('./train_image', filePath)))

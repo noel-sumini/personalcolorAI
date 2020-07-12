@@ -125,8 +125,8 @@ result_dict = { '봄웜라이트': 0,
 for idx, filePath in enumerate(file_paths):
     train_imagePaths = list(paths.list_images(os.path.join('./train_image', filePath)))
     
-    for imagePath in train_imagePaths:
-        print(imagePath)
+    for index, imagePath in enumerate(train_imagePaths):
+        print(idx, index, imagePath)
 
         try :
             L, a, b, S, V = pcolor_analysis(imagePath)
@@ -163,7 +163,7 @@ keras.backend.clear_session()
 
 il = Input(shape = (5,))
 hl = Dense(1024, activation = 'relu')(il)
-hl = Dense(512, activation = 'relu')(hl)
+hl = Dense(1024, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(64, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)

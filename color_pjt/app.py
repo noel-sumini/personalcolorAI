@@ -15,6 +15,13 @@ from werkzeug.utils import secure_filename
 import requests
 from flask import Flask, render_template, request, current_app
 
+# import tensorflow as tf
+# import tensorflow.keras as keras
+# from tensorflow.keras.layers import Input, Dense
+# from tensorflow.keras.optimizers import Adam
+# from tensorflow.keras.models import Model
+# from tensorflow.keras.losses import sparse_categorical_crossentropy, categorical_crossentropy
+
 
 
 UPLOAD_FOLDER = './uploads'
@@ -83,13 +90,13 @@ def pcolor_analysis(imagePath):
     eye_lab = cv2.cvtColor(eye, cv2.COLOR_BGR2Lab)
 
     ## 피부/눈동자에서 LAB값 추출(눈동자/눈썹/모발 -> L, 피부 -> ab)
-    L = np.mean(eye_lab[:,:,0]) *1.0
+
+    L = np.mean(eye_lab[:,:,0])
     a = np.mean(skin_lab[:,:,1])-128
     b = np.mean(skin_lab[:,:,2])-128
     
     S = np.mean(skin_hsv[:,:,1])
     V = np.mean(skin_hsv[:,:,2])
-
     # ## 퍼스널컬러 분류
     
     return L, a, b, S, V
@@ -101,14 +108,22 @@ def pcolor_analysis(imagePath):
 
 train_data = []
 label = []
-file_paths = os.listdir('./train_dataset')
+file_paths = os.listdir('./train_image')
 
 
 result_list = []
 value_data = []
+result_dict = { '봄웜라이트': 0,
+                '봄웜브라이트': 1,
+                '여름쿨라이트': 2,
+                '여름쿨뮤트': 3,
+                '가을웜딥': 5,
+                '가을웜뮤트': 4,
+                '겨울쿨브라이트': 6,
+                '겨울쿨딥': 7}
 
 for idx, filePath in enumerate(file_paths):
-    train_imagePaths = list(paths.list_images(os.path.join('./train_dataset', filePath)))
+    train_imagePaths = list(paths.list_images(os.path.join('./train_image', filePath)))
     
     for imagePath in train_imagePaths:
         print(imagePath)
@@ -124,17 +139,43 @@ for idx, filePath in enumerate(file_paths):
         label.append(filePath)
         _, season, detail = filePath.split('_')
         result_temp = season + detail
-        result_list.append(result_temp)
+        target = result_dict[result_temp]
+
+        
+        # result_list.append(result_dict[result_temp])
+        
+
+        result_list.append(target)
 
 ## Scikit-Learn 모델 학습
 
 print("AI분석중")
 print("=" * 20)
 
-rfc = RandomForestClassifier()
-value_data = np.array(value_data)
+# rfc = RandomForestClassifier()
 result_list = np.array(result_list)
-rfc.fit(value_data, result_list)
+# rfc.fit(input_data, output_data)
+
+input_data = np.array(value_data)
+output_data = np.eye(8)[result_list]
+
+keras.backend.clear_session()
+
+il = Input(shape = (5,))
+hl = Dense(256, activation = 'relu')(il)
+hl = Dense(64, activation = 'relu')(hl)
+ol = Dense(8, activation = 'softmax')(hl)
+
+model = Model(inputs = il, outputs = ol)
+model.summary()
+es = [keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)]
+
+model.compile(loss = categorical_crossentropy, optimizer = Adam(lr = 0.001), metrics = ['accuracy'])
+model.fit(input_data, output_data, batch_size = 128, epochs = 100, verbose = 1, validation_split = 0.2, callbacks = es)
+
+
+
+
 
 ## Flask 
 
@@ -188,13 +229,17 @@ def result():
         try:
             L, a, b, S, V = pcolor_analysis( file_path )
             x = np.array([L, a, b, S, V]).reshape((1,5))
-            fin_result = rfc.predict(x)
+            result = model.predict(x).argmax()
+            
+            for title, value in result_dict.items(): 
+                if value == result:
+                    fin_result = title
 
             print(fin_result)
 
             
 
-            if fin_result == '봄라이트':
+            if fin_result == '봄웜라이트':
                 color_result_src_1 = color_result_src_default_url + 'spring_light/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'spring_light/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'spring_light/3.jpg'
@@ -206,7 +251,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'spring_light/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'spring_light/3.jpg'
                 
-            elif fin_result == '봄브라이트':
+            elif fin_result == '봄웜브라이트':
                 color_result_src_1 = color_result_src_default_url + 'spring_bright/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'spring_bright/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'spring_bright/3.jpg'
@@ -219,7 +264,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'spring_bright/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'spring_bright/3.jpg'
 
-            elif fin_result == '여름라이트':
+            elif fin_result == '여름쿨라이트':
                 color_result_src_1 = color_result_src_default_url + 'summer_light/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'summer_light/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'summer_light/3.jpg'
@@ -233,7 +278,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'summer_light/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'summer_light/3.jpg'
 
-            elif fin_result == '여름뮤트':
+            elif fin_result == '여름쿨뮤트':
                 color_result_src_1 = color_result_src_default_url + 'summer_mute/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'summer_mute/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'summer_mute/3.jpg'
@@ -246,7 +291,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'summer_mute/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'summer_mute/3.jpg'
 
-            elif fin_result == '가을뮤트':
+            elif fin_result == '가을웜뮤트':
                 color_result_src_1 = color_result_src_default_url + 'fall_mute/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'fall_mute/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'fall_mute/3.jpg'
@@ -259,7 +304,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'fall_mute/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'fall_mute/3.jpg'
 
-            elif fin_result == '가을딥':
+            elif fin_result == '가을웜딥':
                 color_result_src_1 = color_result_src_default_url + 'fall_deep/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'fall_deep/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'fall_deep/3.jpg'
@@ -272,7 +317,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'fall_deep/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'fall_deep/3.jpg'
 
-            elif fin_result == '겨울브라이트':
+            elif fin_result == '겨울쿨브라이트':
                 color_result_src_1 = color_result_src_default_url + 'winter_bright/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'winter_bright/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'winter_bright/3.jpg'
@@ -285,7 +330,7 @@ def result():
                 celeb_img_2 = celeb_img_default_url + 'winter_bright/2.jpg'
                 celeb_img_3 = celeb_img_default_url + 'winter_bright/3.jpg'
 
-            elif fin_result == '겨울딥':
+            elif fin_result == '겨울쿨딥':
                 color_result_src_1 = color_result_src_default_url + 'winter_deep/1.jpg'
                 color_result_src_2 = color_result_src_default_url + 'winter_deep/2.jpg'
                 color_result_src_3 = color_result_src_default_url + 'winter_deep/3.jpg'

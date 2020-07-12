@@ -15,12 +15,12 @@ from werkzeug.utils import secure_filename
 import requests
 from flask import Flask, render_template, request, current_app
 
-# import tensorflow as tf
-# import tensorflow.keras as keras
-# from tensorflow.keras.layers import Input, Dense
-# from tensorflow.keras.optimizers import Adam
-# from tensorflow.keras.models import Model
-# from tensorflow.keras.losses import sparse_categorical_crossentropy, categorical_crossentropy
+import tensorflow as tf
+import tensorflow.keras as keras
+from tensorflow.keras.layers import Input, Dense
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.models import Model
+from tensorflow.keras.losses import sparse_categorical_crossentropy, categorical_crossentropy
 
 
 

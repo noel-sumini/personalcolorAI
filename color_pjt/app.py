@@ -162,13 +162,15 @@ output_data = np.eye(8)[result_list]
 keras.backend.clear_session()
 
 il = Input(shape = (5,))
-hl = Dense(64, activation = 'relu')(il)
-# hl = Dense(64, activation = 'relu')(hl)
+hl = Dense(1024, activation = 'relu')(il)
+hl = Dense(1024, activation = 'relu')(hl)
+hl = Dense(1024, activation = 'relu')(hl)
+hl = Dense(64, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)
 
 model = Model(inputs = il, outputs = ol)
 model.summary()
-es = [keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)]
+es = [keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)]
 
 model.compile(loss = categorical_crossentropy, optimizer = Adam(lr = 0.001), metrics = ['accuracy'])
 model.fit(input_data, output_data, batch_size = 128, epochs = 100, verbose = 1, validation_split = 0.2, callbacks = es)

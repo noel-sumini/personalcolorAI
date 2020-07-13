@@ -127,25 +127,37 @@ for idx, filePath in enumerate(file_paths):
     
     for index, imagePath in enumerate(train_imagePaths):
         print(idx, index, imagePath)
+        df = pd.DataFrame(columns = ["L", "a", "b", "S", "V", "name", "target" ])
 
         try :
             L, a, b, S, V = pcolor_analysis(imagePath)
         except :
             os.remove(imagePath)
 
-        temp = [L, a, b, S, V]
-        value_data.append(temp)  
+        # temp = [L, a, b, S, V]
+        # value_data.append(temp)  
 
         label.append(filePath)
-        _, season, detail = filePath.split('_')
+        
+        name , season, detail = filePath.split("_")
         result_temp = season + detail
         target = result_dict[result_temp]
+
+        df = df.append({"L" : L, 
+                        "a" : a, 
+                        "b" : b, 
+                        "S" : S, 
+                        "V" : V, 
+                        "name" : name, 
+                        "target" : target }, ignore_index = True)
+
+        
 
         
         # result_list.append(result_dict[result_temp])
         
 
-        result_list.append(target)
+        result_list.append(result_temp)
 
 ## Scikit-Learn 모델 학습
 
@@ -153,11 +165,17 @@ print("AI분석중")
 print("=" * 20)
 
 # rfc = RandomForestClassifier()
-result_list = np.array(result_list)
-# rfc.fit(input_data, output_data)
 
-input_data = np.array(value_data)
+## min_max scaling ## 
+df[["L", "a", "b", "S", "V"]] = (df[["L", "a", "b", "S", "V"]]-df[["L", "a", "b", "S", "V"]].min(axis=0)) / (df[["L", "a", "b", "S", "V"]].max(axis=0) -df[["L", "a", "b", "S", "V"]].min(axis=0))
+#####################
+
+## Input/Output data Numpy 변환 ##
+input_data = df[["L", "a", "b", "S", "V"]].to_numpy()
+result_list = df["target"].tolist()
 output_data = np.eye(8)[result_list]
+# rfc.fit(input_data, output_data)
+# input_data = np.array(value_data)
 
 keras.backend.clear_session()
 
@@ -165,15 +183,13 @@ il = Input(shape = (5,))
 hl = Dense(1024, activation = 'relu')(il)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(64, activation = 'relu')(hl)
-hl = Dense(64, activation = 'relu')(hl)
-hl = Dense(32, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)
 
 model = Model(inputs = il, outputs = ol)
 
-es = [keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)]
+es = [keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)]
 
-model.compile(loss = categorical_crossentropy, optimizer = Adam(lr = 0.001), metrics = ['accuracy'])
+model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
 model.fit(input_data, output_data, batch_size = 128, epochs = 100, verbose = 1, validation_split = 0.2, callbacks = es)
 
 
@@ -228,6 +244,7 @@ def result():
         file_path = os.path.join('./uploads', name )
         
         print(file_path)
+        
 
         try:
             L, a, b, S, V = pcolor_analysis( file_path )

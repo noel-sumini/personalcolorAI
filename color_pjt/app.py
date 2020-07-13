@@ -136,9 +136,9 @@ for idx, filePath in enumerate(file_paths):
             os.remove(imagePath)
 
         # temp = [L, a, b, S, V]
-        # value_data.append(temp)  
+        value_data.append(temp)  
 
-        label.append(filePath)
+        # label.append(filePath)
         
         name, season, detail = filePath.split("_")
         result_temp = season + detail
@@ -192,7 +192,7 @@ model = Model(inputs = il, outputs = ol)
 es = EarlyStopping(monitor='val_loss', patience=5)
 
 model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
-model.fit(input_data, output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.2, callbacks = [es])
+model.fit(inputs = input_data, outputs = output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.2, callbacks = [es])
 
 
 

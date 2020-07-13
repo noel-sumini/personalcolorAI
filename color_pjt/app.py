@@ -177,7 +177,7 @@ print("=" * 20)
 
 input_data = np.array(value_data)
 output_data = np.eye(8)[result_list]
-rfc.fit(input_data, output_data)
+# rfc.fit(input_data, output_data)
 
 keras.backend.clear_session()
 

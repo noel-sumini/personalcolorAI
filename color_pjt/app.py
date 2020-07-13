@@ -144,21 +144,21 @@ for idx, filePath in enumerate(file_paths):
         result_temp = season + detail
         target = result_dict[result_temp]
 
-        df = df.append({"L" : L, 
-                        "a" : a, 
-                        "b" : b, 
-                        "S" : S, 
-                        "V" : V, 
-                        "name" : name, 
-                        "target" : target }, ignore_index = True)
+        # df = df.append({"L" : L, 
+        #                 "a" : a, 
+        #                 "b" : b, 
+        #                 "S" : S, 
+        #                 "V" : V, 
+        #                 "name" : name, 
+        #                 "target" : target }, ignore_index = True)
 
         
 
         
-        # result_list.append(result_dict[result_temp])
+        result_list.append(target)
         
 
-        result_list.append(result_temp)
+        
 
 ## Scikit-Learn 모델 학습
 
@@ -168,15 +168,16 @@ print("=" * 20)
 # rfc = RandomForestClassifier()
 
 ## min_max scaling ## 
-df[["L", "a", "b", "S", "V"]] = (df[["L", "a", "b", "S", "V"]]-df[["L", "a", "b", "S", "V"]].min(axis=0)) / (df[["L", "a", "b", "S", "V"]].max(axis=0) -df[["L", "a", "b", "S", "V"]].min(axis=0))
+# df[["L", "a", "b", "S", "V"]] = (df[["L", "a", "b", "S", "V"]]-df[["L", "a", "b", "S", "V"]].min(axis=0)) / (df[["L", "a", "b", "S", "V"]].max(axis=0) -df[["L", "a", "b", "S", "V"]].min(axis=0))
 #####################
 
 ## Input/Output data Numpy 변환 ##
-input_data = df[["L", "a", "b", "S", "V"]].to_numpy()
-result_list = df["target"].tolist()
+# input_data = df[["L", "a", "b", "S", "V"]].to_numpy()
+# result_list = df["target"].tolist()
+
+input_data = np.array(value_data)
 output_data = np.eye(8)[result_list]
-# rfc.fit(input_data, output_data)
-# input_data = np.array(value_data)
+rfc.fit(input_data, output_data)
 
 keras.backend.clear_session()
 

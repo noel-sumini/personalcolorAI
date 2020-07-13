@@ -135,7 +135,7 @@ for idx, filePath in enumerate(file_paths):
         except :
             os.remove(imagePath)
 
-        # temp = [L, a, b, S, V]
+        temp = [L, a, b, S, V]
         value_data.append(temp)  
 
         # label.append(filePath)

@@ -21,6 +21,7 @@ from tensorflow.keras.layers import Input, Dense
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Model
 from tensorflow.keras.losses import sparse_categorical_crossentropy, categorical_crossentropy
+from tensorflow.keras.callbacks import EarlyStopping
 
 
 
@@ -139,7 +140,7 @@ for idx, filePath in enumerate(file_paths):
 
         label.append(filePath)
         
-        name , season, detail = filePath.split("_")
+        name, season, detail = filePath.split("_")
         result_temp = season + detail
         target = result_dict[result_temp]
 
@@ -187,10 +188,10 @@ ol = Dense(8, activation = 'softmax')(hl)
 
 model = Model(inputs = il, outputs = ol)
 
-es = [keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)]
+es = EarlyStopping(monitor='val_loss', patience=5)
 
 model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
-model.fit(input_data, output_data, batch_size = 128, epochs = 100, verbose = 1, validation_split = 0.2, callbacks = es)
+model.fit(input_data, output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.2, callbacks = [es])
 
 
 

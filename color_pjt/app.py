@@ -173,11 +173,11 @@ V_max = max([temp[4] for temp in value_data])
 V_min = min([temp[4] for temp in value_data])
 
 for temp in value_data:
-    (temp[0] - L_min) / (L_max - L_min)
-    (temp[1] - a_min) / (a_max - a_min)
-    (temp[2] - b_min) / (b_max - b_min)
-    (temp[3] - S_min) / (S_max - S_min)
-    (temp[4] - V_min) / (V_max - V_min)
+    temp[0] = (temp[0] - L_min) / (L_max - L_min)
+    temp[1] = (temp[1] - a_min) / (a_max - a_min)
+    temp[2] = (temp[2] - b_min) / (b_max - b_min)
+    temp[3] = (temp[3] - S_min) / (S_max - S_min)
+    temp[4] = (temp[4] - V_min) / (V_max - V_min)
 
 
         

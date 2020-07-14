@@ -92,7 +92,7 @@ def pcolor_analysis(imagePath):
 
     ## 피부/눈동자에서 LAB값 추출(눈동자/눈썹/모발 -> L, 피부 -> ab)
 
-    L = np.mean(eye_lab[:,:,0]) * 0.7 + np.mean(skin_lab[:,:,0]) * 0.3
+    L = np.mean(eye_lab[:,:,0]) * 0.5 + np.mean(skin_lab[:,:,0]) * 0.5
     a = np.mean(skin_lab[:,:,1])-128
     b = np.mean(skin_lab[:,:,2])-128
     

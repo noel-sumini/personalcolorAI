@@ -380,6 +380,9 @@ def result():
             fin_result = fin_result.replace('[','"')
             fin_result = fin_result.replace(']','"')
             celeb_result = fin_result
+                
+            if os.path.isfile(file_path):
+                os.remove(file_path)
 
 
 
@@ -407,9 +410,7 @@ def result():
                                 color_result_src_3 = color_result_src_3,
                                 color_result_src_4 = color_result_src_4,
                                 color_result_src_5 = color_result_src_5)
-        
-        if os.path.isfile(file_path):
-            os.remove(file_path)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port = '80', threaded=True)

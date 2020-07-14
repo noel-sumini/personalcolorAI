@@ -173,7 +173,7 @@ new_df = (new_df - new_df.min(axis=0)) / (new_df.max(axis=0) - new_df.min(axis=0
 #####################
 
 ## Input/Output data Numpy 변환 ##
-input_data = new_df.to_numpy()
+input_data = new_df.values
 # result_list = df["target"].tolist()
 
 # input_data = np.array(value_data)

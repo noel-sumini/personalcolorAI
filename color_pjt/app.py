@@ -144,19 +144,41 @@ for idx, filePath in enumerate(file_paths):
         result_temp = season + detail
         target = result_dict[result_temp]
 
-        df = df.append({"L" : L, 
-                        "a" : a, 
-                        "b" : b, 
-                        "S" : S, 
-                        "V" : V, 
-                        "name" : name, 
-                        "target" : target }, ignore_index = True)
+        # df = df.append({"L" : L, 
+        #                 "a" : a, 
+        #                 "b" : b, 
+        #                 "S" : S, 
+        #                 "V" : V, 
+        #                 "name" : name, 
+        #                 "target" : target }, ignore_index = True)
 
         
 
         
         result_list.append(target)
-        
+
+L_max = max([temp[0] for temp in value_data])
+L_min = min([temp[0] for temp in value_data])
+
+a_max = max([temp[1] for temp in value_data])
+a_min = min([temp[1] for temp in value_data])
+
+b_max = max([temp[2] for temp in value_data])
+b_min = min([temp[2] for temp in value_data])
+
+S_max = max([temp[3] for temp in value_data])
+S_min = min([temp[3] for temp in value_data])
+
+V_max = max([temp[4] for temp in value_data])
+V_min = min([temp[4] for temp in value_data])
+
+for temp in value_data:
+    (temp[0] - L_min) / (L_max - L_min)
+    (temp[1] - a_min) / (a_max - a_min)
+    (temp[2] - b_min) / (b_max - b_min)
+    (temp[3] - S_min) / (S_max - S_min)
+    (temp[4] - V_min) / (V_max - V_min)
+
 
         
 
@@ -168,15 +190,15 @@ print("=" * 20)
 # rfc = RandomForestClassifier()
 
 ## min_max scaling ## 
-new_df = df[["L", "a", "b", "S", "V"]] 
-new_df = (new_df - new_df.min(axis=0)) / (new_df.max(axis=0) - new_df.min(axis=0))
+# new_df = df[["L", "a", "b", "S", "V"]] 
+# new_df = (new_df - new_df.min(axis=0)) / (new_df.max(axis=0) - new_df.min(axis=0))
 #####################
 
 ## Input/Output data Numpy 변환 ##
-input_data = new_df.values
+# input_data = new_df.values
 # result_list = df["target"].tolist()
 
-# input_data = np.array(value_data)
+input_data = np.array(value_data)
 output_data = np.eye(8)[result_list]
 # rfc.fit(input_data, output_data)
 
@@ -197,7 +219,7 @@ model.summary()
 es = EarlyStopping(monitor='val_loss', patience=5)
 
 model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
-model.fit(input_data, output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.3, callbacks = [es])
+model.fit(input_data, output_data, batch_size = 128, epochs = 50, verbose = 1, validation_split = 0.3, callbacks = [es])
 
 
 

@@ -209,6 +209,7 @@ hl = Dense(1024, activation = 'relu')(il)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
+hl = Dense(256, activation = 'relu')(hl)
 hl = Dense(128, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)
 

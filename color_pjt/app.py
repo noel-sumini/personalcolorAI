@@ -184,10 +184,14 @@ keras.backend.clear_session()
 il = Input(shape = (5,))
 hl = Dense(1024, activation = 'relu')(il)
 hl = Dense(512, activation = 'relu')(hl)
+hl = Dense(512, activation = 'relu')(hl)
+hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(64, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)
 
 model = Model(inputs = il, outputs = ol)
+
+model.summary()
 
 es = EarlyStopping(monitor='val_loss', patience=5)
 

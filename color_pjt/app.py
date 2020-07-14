@@ -218,7 +218,7 @@ model.summary()
 
 es = EarlyStopping(monitor='val_loss', patience=5)
 
-model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
+model.compile(loss = categorical_crossentropy, optimizer = Adam(lr=0.01), metrics = ['accuracy'])
 model.fit(input_data, output_data, batch_size = 32, epochs = 50, verbose = 1, validation_split = 0.3, callbacks = [es])
 
 

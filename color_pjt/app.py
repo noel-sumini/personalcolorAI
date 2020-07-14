@@ -92,7 +92,8 @@ def pcolor_analysis(imagePath):
 
     ## 피부/눈동자에서 LAB값 추출(눈동자/눈썹/모발 -> L, 피부 -> ab)
 
-    L = np.mean(eye_lab[:,:,0]) * 0.5 + np.mean(skin_lab[:,:,0]) * 0.5
+    L_eye = np.mean(eye_lab[:,:,0])
+    L_skin = np.mean(skin_lab[:,:,0])
     a = np.mean(skin_lab[:,:,1])-128
     b = np.mean(skin_lab[:,:,2])-128
     
@@ -100,7 +101,7 @@ def pcolor_analysis(imagePath):
     V = np.mean(skin_hsv[:,:,2])
     # ## 퍼스널컬러 분류
     
-    return L, a, b, S, V
+    return L_eye, L_skin, a, b, S, V
 
 
 
@@ -128,56 +129,48 @@ for idx, filePath in enumerate(file_paths):
     
     for index, imagePath in enumerate(train_imagePaths):
         print(idx, index, imagePath)
-        df = pd.DataFrame(columns = ["L", "a", "b", "S", "V", "name", "target" ])
+        
 
         try :
-            L, a, b, S, V = pcolor_analysis(imagePath)
+            L_eye, L_skin, a, b, S, V = pcolor_analysis(imagePath)
         except :
             os.remove(imagePath)
 
-        temp = [L, a, b, S, V]
+        temp = [L_eye, L_skin, a, b, S, V]
         value_data.append(temp)  
 
-        # label.append(filePath)
         
         name, season, detail = filePath.split("_")
         result_temp = season + detail
-        target = result_dict[result_temp]
+        target = result_dict[result_temp]  
 
-        # df = df.append({"L" : L, 
-        #                 "a" : a, 
-        #                 "b" : b, 
-        #                 "S" : S, 
-        #                 "V" : V, 
-        #                 "name" : name, 
-        #                 "target" : target }, ignore_index = True)
-
-        
-
-        
         result_list.append(target)
 
-L_max = max([temp[0] for temp in value_data])
-L_min = min([temp[0] for temp in value_data])
+L_eye_max = max([temp[0] for temp in value_data])
+L_eye_min = min([temp[0] for temp in value_data])
 
-a_max = max([temp[1] for temp in value_data])
-a_min = min([temp[1] for temp in value_data])
+L_skin_max = max([temp[1] for temp in value_data])
+L_skin_min = min([temp[1] for temp in value_data])
 
-b_max = max([temp[2] for temp in value_data])
-b_min = min([temp[2] for temp in value_data])
+a_max = max([temp[2] for temp in value_data])
+a_min = min([temp[2] for temp in value_data])
 
-S_max = max([temp[3] for temp in value_data])
-S_min = min([temp[3] for temp in value_data])
+b_max = max([temp[3] for temp in value_data])
+b_min = min([temp[3] for temp in value_data])
 
-V_max = max([temp[4] for temp in value_data])
-V_min = min([temp[4] for temp in value_data])
+S_max = max([temp[4] for temp in value_data])
+S_min = min([temp[4] for temp in value_data])
+
+V_max = max([temp[5] for temp in value_data])
+V_min = min([temp[5] for temp in value_data])
 
 for temp in value_data:
-    temp[0] = (temp[0] - L_min) / (L_max - L_min)
-    temp[1] = (temp[1] - a_min) / (a_max - a_min)
-    temp[2] = (temp[2] - b_min) / (b_max - b_min)
-    temp[3] = (temp[3] - S_min) / (S_max - S_min)
-    temp[4] = (temp[4] - V_min) / (V_max - V_min)
+    temp[0] = (temp[0] - L_eye_min) / (L_eye_max - L_eye_min)
+    temp[1] = (temp[1] - L_skin_min) / (L_skin_max - L_skin_min)
+    temp[2] = (temp[2] - a_min) / (a_max - a_min)
+    temp[3] = (temp[3] - b_min) / (b_max - b_min)
+    temp[4] = (temp[4] - S_min) / (S_max - S_min)
+    temp[5] = (temp[5] - V_min) / (V_max - V_min)
 
 
         
@@ -204,7 +197,7 @@ output_data = np.eye(8)[result_list]
 
 keras.backend.clear_session()
 
-il = Input(shape = (5,))
+il = Input(shape = (6,))
 hl = Dense(1024, activation = 'relu')(il)
 hl = Dense(1024, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
@@ -276,8 +269,8 @@ def result():
         
 
         try:
-            L, a, b, S, V = pcolor_analysis( file_path )
-            x = np.array([L, a, b, S, V]).reshape((1,5))
+            L_eye, L_skin, a, b, S, V = pcolor_analysis( file_path )
+            x = np.array([L_eye, L_skin, a, b, S, V]).reshape((1,6))
             result = model.predict(x).argmax()
             
             for title, value in result_dict.items(): 

@@ -144,13 +144,13 @@ for idx, filePath in enumerate(file_paths):
         result_temp = season + detail
         target = result_dict[result_temp]
 
-        # df = df.append({"L" : L, 
-        #                 "a" : a, 
-        #                 "b" : b, 
-        #                 "S" : S, 
-        #                 "V" : V, 
-        #                 "name" : name, 
-        #                 "target" : target }, ignore_index = True)
+        df = df.append({"L" : L, 
+                        "a" : a, 
+                        "b" : b, 
+                        "S" : S, 
+                        "V" : V, 
+                        "name" : name, 
+                        "target" : target }, ignore_index = True)
 
         
 
@@ -168,14 +168,15 @@ print("=" * 20)
 # rfc = RandomForestClassifier()
 
 ## min_max scaling ## 
-# df[["L", "a", "b", "S", "V"]] = (df[["L", "a", "b", "S", "V"]]-df[["L", "a", "b", "S", "V"]].min(axis=0)) / (df[["L", "a", "b", "S", "V"]].max(axis=0) -df[["L", "a", "b", "S", "V"]].min(axis=0))
+new_df = df[["L", "a", "b", "S", "V"]] 
+new_df = (new_df - new_df.min(axis=0)) / (new_df.max(axis=0) - new_df.min(axis=0))
 #####################
 
 ## Input/Output data Numpy 변환 ##
-# input_data = df[["L", "a", "b", "S", "V"]].to_numpy()
+input_data = new_df.to_numpy()
 # result_list = df["target"].tolist()
 
-input_data = np.array(value_data)
+# input_data = np.array(value_data)
 output_data = np.eye(8)[result_list]
 # rfc.fit(input_data, output_data)
 
@@ -186,14 +187,14 @@ hl = Dense(1024, activation = 'relu')(il)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
-hl = Dense(64, activation = 'relu')(hl)
+hl = Dense(128, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)
 
 model = Model(inputs = il, outputs = ol)
 
 model.summary()
 
-es = EarlyStopping(monitor='val_loss', patience=10)
+es = EarlyStopping(monitor='val_loss', patience=5)
 
 model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
 model.fit(input_data, output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.3, callbacks = [es])

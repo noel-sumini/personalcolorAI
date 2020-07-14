@@ -209,6 +209,7 @@ hl = Dense(1024, activation = 'relu')(il)
 hl = Dense(1024, activation = 'relu')(hl)
 hl = Dense(512, activation = 'relu')(hl)
 hl = Dense(128, activation = 'relu')(hl)
+hl = Dense(32, activation = 'relu')(hl)
 ol = Dense(8, activation = 'softmax')(hl)
 
 model = Model(inputs = il, outputs = ol)

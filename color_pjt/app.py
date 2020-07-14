@@ -193,10 +193,10 @@ model = Model(inputs = il, outputs = ol)
 
 model.summary()
 
-es = EarlyStopping(monitor='val_loss', patience=5)
+es = EarlyStopping(monitor='val_loss', patience=10)
 
 model.compile(loss = categorical_crossentropy, optimizer = Adam(), metrics = ['accuracy'])
-model.fit(input_data, output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.2, callbacks = [es])
+model.fit(input_data, output_data, batch_size = 64, epochs = 50, verbose = 1, validation_split = 0.3, callbacks = [es])
 
 
 

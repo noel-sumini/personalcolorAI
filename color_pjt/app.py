@@ -133,18 +133,22 @@ for idx, filePath in enumerate(file_paths):
 
         try :
             L_eye, L_skin, a, b, S, V = pcolor_analysis(imagePath)
+
+            temp = [L_eye, L_skin, a, b, S, V]
+            
+            value_data.append(temp)  
+
+            
+            name, season, detail = filePath.split("_")
+            result_temp = season + detail
+            target = result_dict[result_temp]  
+
+            result_list.append(target)
+            
         except :
             os.remove(imagePath)
 
-        temp = [L_eye, L_skin, a, b, S, V]
-        value_data.append(temp)  
 
-        
-        name, season, detail = filePath.split("_")
-        result_temp = season + detail
-        target = result_dict[result_temp]  
-
-        result_list.append(target)
 
 L_eye_max = max([temp[0] for temp in value_data])
 L_eye_min = min([temp[0] for temp in value_data])

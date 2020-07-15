@@ -110,7 +110,7 @@ def pcolor_analysis(imagePath):
 
 train_data = []
 label = []
-file_paths = os.listdir('./train_image')
+file_paths = os.listdir('./images')
 
 
 result_list = []
@@ -125,7 +125,7 @@ result_dict = { '봄웜라이트': 0,
                 '겨울쿨딥': 7}
 
 for idx, filePath in enumerate(file_paths):
-    train_imagePaths = list(paths.list_images(os.path.join('./train_image', filePath)))
+    train_imagePaths = list(paths.list_images(os.path.join('./images', filePath)))
     
     for index, imagePath in enumerate(train_imagePaths):
         print(idx, index, imagePath)
@@ -228,7 +228,7 @@ model.fit(input_data, output_data, batch_size = 32, epochs = 50, verbose = 1, va
 def result():
     fin_result = ""
     final_result = ""
-    color_result_src_default_url = "https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/color_palate/"
+    color_result_src_default_url = "./color_palate/"
     color_result_src_1 =""
     color_result_src_2 =""
     color_result_src_3 =""
@@ -239,7 +239,7 @@ def result():
     celeb_name3 =  ""
     celeb_data1 = ""
     celeb_data2 = ""
-    celeb_img_default_url = 'https://raw.githubusercontent.com/noel-sumini/personalcolorAI/master/color_pjt/celeb_image/'
+    celeb_img_default_url = './celeb_image/'
     celeb_img_1 = ""
     celeb_img_2 = ""
     celeb_img_3 = ""
